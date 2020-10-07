@@ -10,11 +10,12 @@ public abstract class Activity {
   private LocalDateTime initialDate = null;
   private LocalDateTime finalDate = null;
 
-  public Activity(Activity father, String name) {
+  public Activity(String name) {
     this.name = name;
-    this.father = father;
     duration = Duration.ZERO;
   }
+
+  public void addFather(Activity a) { this.father = a;}
 
   public Activity getFather() {
     return father;
