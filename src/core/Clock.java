@@ -1,3 +1,5 @@
+package core;
+
 import java.time.LocalDateTime;
 import java.util.Observable;
 import java.util.Timer;
