@@ -12,7 +12,7 @@ public class Client implements Observer {
   }
 
   public void start() {
-    Clock c = new Clock();
+    Clock c = Clock.getInstance();
     c.addObserver(this);
     c.start();
     try {
@@ -26,5 +26,6 @@ public class Client implements Observer {
   public static void main(String[] args) {
     Client client = new Client();
     client.start();
+
   }
 }

@@ -10,7 +10,7 @@ public class Clock extends Observable {
   private LocalDateTime date;
   private static Clock clock;
 
-  public Clock() {
+  private Clock() {
     timer = new Timer();
   }
 
@@ -34,5 +34,11 @@ public class Clock extends Observable {
     timer.cancel();
   }
 
+  public static Clock getInstance() {
+    if(clock == null) {
+      clock = new Clock();
+    }
+    return clock;
+  }
 
 }
