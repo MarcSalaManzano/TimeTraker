@@ -13,8 +13,10 @@ public class Interval implements Observer {
   private LocalDateTime initialDate;
   private LocalDateTime finalDate;
 
+  @Override
   public void update(Observable o, Object ob)
   {
+
 
   }
 
