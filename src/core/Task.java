@@ -22,7 +22,7 @@ public class Task extends Activity{
   }
 
   public void startTask() {
-    Interval newInterval = new Interval();
+    Interval newInterval = new Interval(this);
     intervals.add(newInterval);
     Clock.getInstance().addObserver(newInterval);
   }
@@ -30,4 +30,5 @@ public class Task extends Activity{
   public void stopTask() {
     Clock.getInstance().deleteObserver(intervals.get(intervals.size()-1));
   }
+
 }
