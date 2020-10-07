@@ -12,6 +12,7 @@ public class Clock extends Observable {
 
   private Clock() {
     timer = new Timer();
+    date = LocalDateTime.now();
   }
 
   public LocalDateTime getDate(){

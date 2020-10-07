@@ -14,7 +14,7 @@ public class Controller {
 
   public void startTask(String name) {}
 
-  private Activity findActivityByName(String Name) {}
+  private Activity findActivityByName(String Name) { return null;}
 
-  public List<Activity> getActiveTask() {}
+  public List<Activity> getActiveTask() {return null;}
 }

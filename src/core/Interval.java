@@ -3,6 +3,7 @@ package core;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Observer;
 import java.util.Observable;
 
@@ -33,6 +34,7 @@ public class Interval implements Observer {
     father.addDuration(newDuration);  //adds the duration to the task's duration
 
     finalDate = newDate; //updates the current finalDate
+    father.setFinalDate(finalDate);
   }
 
   public LocalDateTime getInitialDate() {
@@ -41,5 +43,11 @@ public class Interval implements Observer {
 
   public LocalDateTime getFinalDate() {
     return finalDate;
+  }
+
+  @Override
+  public String toString() {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    return "Interval   "+initialDate.format(formatter)+"   "+finalDate.format(formatter)+"    "+duration.getSeconds()+"\n";
   }
 }

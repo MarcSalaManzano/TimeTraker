@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Task extends Activity{
 
-  private List<Interval> intervals = null;
+  private List<Interval> intervals;
   private boolean status;
 
   public Task(String name) {
@@ -27,11 +27,9 @@ public class Task extends Activity{
     Interval newInterval = new Interval(this);
     intervals.add(newInterval);
     Clock.getInstance().addObserver(newInterval);
-
-    if (this.getFather().getInitialDate() == null) {
-      this.getFather().setInitialDate(Clock.getInstance().getDate());
-      this.getFather().setFinalDate(this.getFather().getInitialDate());
-    }
+    this.setInitialDate(Clock.getInstance().getDate());
+    this.setFinalDate(Clock.getInstance().getDate());
+    this.status = true;
 
   }
 
@@ -41,4 +39,9 @@ public class Task extends Activity{
     
   }
 
+  @Override
+  public String toString() {
+    String description = intervals.get(intervals.size()-1).toString();
+    return description+super.toString();
+  }
 }
