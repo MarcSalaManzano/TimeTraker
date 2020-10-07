@@ -37,7 +37,7 @@ public abstract class Activity {
   }
 
   public void addDuration(Duration duration) {
-    this.duration.plus(duration);
+    this.duration = this.duration.plus(duration);
   }
 
   public long getDuration() {
