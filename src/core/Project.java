@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Project {
 
-  List<Activity> childs;
+  private List<Activity> childs;
 
   public void addActivity(Activity a)
   {

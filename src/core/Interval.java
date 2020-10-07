@@ -8,10 +8,10 @@ import java.util.Observable;
 
 public class Interval implements Observer {
 
-  Duration duration;
-  Task father;
-  LocalDateTime initialDate;
-  LocalDateTime finalDate;
+  private Duration duration;
+  private Task father;
+  private LocalDateTime initialDate;
+  private LocalDateTime finalDate;
 
   public void update(Observable o, Object ob)
   {

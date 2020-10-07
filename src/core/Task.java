@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Task {
 
-  List<Interval> intervals = null;
-  boolean status;
+  private List<Interval> intervals = null;
+  private boolean status;
 
   public boolean getStatus() {
     return status;
