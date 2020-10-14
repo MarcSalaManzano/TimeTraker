@@ -1,5 +1,7 @@
 package core;
 
+import org.json.JSONObject;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +16,13 @@ public abstract class Activity {
   public Activity(String name) {
     this.name = name;
     duration = Duration.ZERO;
+  }
+
+  public Activity(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
+    this.name = name;
+    this.initialDate = initialDate;
+    this.finalDate = finalDate;
+    this.duration = duration;
   }
 
   public void addFather(Activity a) { this.father = a;}
@@ -59,6 +68,8 @@ public abstract class Activity {
     return duration.getSeconds();
   }
 
+  public String getName() { return this.name; }
+
   @Override
   public String toString() {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -71,4 +82,6 @@ public abstract class Activity {
     }
     return description;
   }
+
+  public abstract JSONObject acceptVisitor(Visitor v);
 }

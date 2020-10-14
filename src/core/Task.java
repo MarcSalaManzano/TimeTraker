@@ -1,5 +1,7 @@
 package core;
 
+import org.json.JSONObject;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -12,6 +14,11 @@ public class Task extends Activity{
 
   public Task(String name) {
     super(name);
+    intervals = new ArrayList<>();
+  }
+
+  public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
+    super(name, initialDate, finalDate, duration);
     intervals = new ArrayList<>();
   }
 
@@ -28,7 +35,7 @@ public class Task extends Activity{
     intervals.add(newInterval);
     Clock.getInstance().addObserver(newInterval);
     this.setInitialDate(Clock.getInstance().getDate());
-    this.setFinalDate(Clock.getInstance().getDate());
+    //this.setFinalDate(Clock.getInstance().getDate()); ponerlo en el update
     this.status = true;
 
   }
@@ -39,9 +46,21 @@ public class Task extends Activity{
     
   }
 
+  public List<Interval> getIntervals() { return this.intervals; }
+
   @Override
   public String toString() {
     String description = intervals.get(intervals.size()-1).toString();
     return description+super.toString();
+  }
+
+  @Override
+  public JSONObject acceptVisitor(Visitor v) {
+    return v.visitTask(this);
+  }
+
+  public void addInterval(Interval interval) {
+    intervals.add(interval);
+    interval.setFather(this);
   }
 }

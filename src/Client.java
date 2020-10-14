@@ -1,7 +1,4 @@
-import core.Activity;
-import core.Clock;
-import core.Project;
-import core.Task;
+import core.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,6 +8,7 @@ import java.util.Observer;
 
 public class Client implements Observer {
   List<Activity> active = new ArrayList<>();
+  JSONParse parser = new JSONParse();
   @Override
   public void update(Observable o, Object arg) {
     for(Activity a : active) {
@@ -27,8 +25,7 @@ public class Client implements Observer {
   }
 
   public void start() {
-
-    Clock c = Clock.getInstance();
+    /*Clock c = Clock.getInstance();
     c.addObserver(this);
     c.start();
     Project root = new Project("root");
@@ -42,17 +39,19 @@ public class Client implements Observer {
     Task secondList = new Task("second list");
     prob.addActivity(firstList);
     prob.addActivity(secondList);
-    //active.add(transport);
-    //transport.startTask();
-    active.add(firstList);
-    firstList.startTask();
+    transport.startTask();
+    active.add(transport);
     wait(4);
-    //transport.stopTask();
+    transport.stopTask();
+    active.remove(transport);
     wait(2);
     active.add(firstList);
-
-    //wait(6);
+    firstList.startTask();
+    wait(6);
     c.cancel();
+    parser.saveFile(root, "test.json");*/
+    Project a = parser.loadFile("test.json");
+    System.out.println("");
   }
 
   public static void main(String[] args) {

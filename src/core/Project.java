@@ -1,5 +1,9 @@
 package core;
 
+import org.json.JSONObject;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +16,16 @@ public class Project extends Activity{
     childs = new ArrayList<>();
   }
 
+  public Project(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
+    super(name, initialDate, finalDate, duration);
+    childs = new ArrayList<>();
+  }
+
+  @Override
+  public JSONObject acceptVisitor(Visitor v) {
+    return v.visitProject(this);
+  }
+
   public void addActivity(Activity a)
   {
     childs.add(a);
@@ -21,5 +35,9 @@ public class Project extends Activity{
   public void removeActivity(Activity a)
   {
     childs.remove(a);
+  }
+
+  public List<Activity> getChilds() {
+    return childs;
   }
 }
