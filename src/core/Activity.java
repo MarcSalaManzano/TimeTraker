@@ -73,10 +73,12 @@ public abstract class Activity {
   @Override
   public String toString() {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    String description = "activity:   "+this.name+"   "+
-        this.initialDate.format(formatter)+"   "+
-        this.finalDate.format(formatter)+"   "+
-        this.duration.getSeconds()+"\n";
+    String name = this.getName();
+    String fatherName = this.getFather() == null ? "null" : this.getFather().getName();
+    String startTime = this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter);
+    String finalDate = this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter);
+    long duration = this.getDuration();
+    String description = String.format("Activity %-15s child of %-15s %-20s %-20s %d%n", name, fatherName, startTime, finalDate, duration);
     if(father != null) {
       description = description+father.toString();
     }
@@ -84,4 +86,6 @@ public abstract class Activity {
   }
 
   public abstract JSONObject acceptVisitor(Visitor v);
+
+  public abstract Activity find(String name);
 }

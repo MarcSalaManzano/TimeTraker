@@ -25,10 +25,11 @@ public class Client implements Observer {
   }
 
   public void start() {
-    /*Clock c = Clock.getInstance();
+    Clock c = Clock.getInstance();
     c.addObserver(this);
     c.start();
-    Project root = new Project("root");
+    Project root = parser.loadFile("test.json");
+    /*Project root = new Project("root");
     Task transport = new Task("transportation");
     root.addActivity(transport);
     Project sd = new Project("software design");
@@ -38,20 +39,22 @@ public class Client implements Observer {
     Task firstList = new Task("first list");
     Task secondList = new Task("second list");
     prob.addActivity(firstList);
-    prob.addActivity(secondList);
+    prob.addActivity(secondList);*/
+    Task transport = (Task) root.find("transportation");
     transport.startTask();
     active.add(transport);
     wait(4);
     transport.stopTask();
     active.remove(transport);
     wait(2);
+    Task firstList = (Task) root.find("first list");
     active.add(firstList);
     firstList.startTask();
     wait(6);
     c.cancel();
-    parser.saveFile(root, "test.json");*/
-    Project a = parser.loadFile("test.json");
-    System.out.println("");
+    parser.saveFile(root, "test.json");
+
+    //System.out.println("");
   }
 
   public static void main(String[] args) {

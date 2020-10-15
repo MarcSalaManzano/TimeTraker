@@ -40,4 +40,18 @@ public class Project extends Activity{
   public List<Activity> getChilds() {
     return childs;
   }
+
+  public Activity find(String name) {
+    if(name.equals(this.getName())) {
+      return this;
+    } else {
+      for(Activity act : childs) {
+        Activity activity = act.find(name);
+        if(activity != null) {
+          return activity;
+        }
+      }
+    }
+    return null;
+  }
 }

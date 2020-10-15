@@ -53,10 +53,15 @@ public class Interval implements Observer {
   }
 
   public Duration getDuration() { return duration; }
+
   @Override
   public String toString() {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-    return "Interval   "+initialDate.format(formatter)+"   "+finalDate.format(formatter)+"    "+duration.getSeconds()+"\n";
+    String fatherName = this.father == null ? "null" : this.father.getName();
+    String startTime = this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter);
+    String finalDate = this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter);
+    long duration = this.getDuration().getSeconds();
+    return String.format("Interval %-15s child of %-15s %-20s %-20s %d%n","", fatherName, startTime, finalDate, duration);
   }
 
   public JSONObject acceptVisitor(Visitor v) {

@@ -31,19 +31,19 @@ public class Task extends Activity{
   }
 
   public void startTask() {
+    LocalDateTime newInitialDate = Clock.getInstance().getDate();
     Interval newInterval = new Interval(this);
     intervals.add(newInterval);
     Clock.getInstance().addObserver(newInterval);
-    this.setInitialDate(Clock.getInstance().getDate());
-    //this.setFinalDate(Clock.getInstance().getDate()); ponerlo en el update
+    if(getInitialDate() == null) {
+      this.setInitialDate(newInitialDate);
+    }
     this.status = true;
-
   }
 
   public void stopTask() {
     Clock.getInstance().deleteObserver(intervals.get(intervals.size()-1));
     this.status = false;
-    
   }
 
   public List<Interval> getIntervals() { return this.intervals; }
@@ -62,5 +62,13 @@ public class Task extends Activity{
   public void addInterval(Interval interval) {
     intervals.add(interval);
     interval.setFather(this);
+  }
+
+  public Activity find(String name) {
+    if(name.equals(this.getName())) {
+      return this;
+    } else {
+      return null;
+    }
   }
 }
