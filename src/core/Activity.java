@@ -6,6 +6,11 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/*
+En esta clase, se guardan los valores de cada actividad añadida. Además se controla el orden de actuación,
+si tiene que ser un proyecto padre, o una tasca hija, por ejemplo.
+ */
+
 public abstract class Activity {
   private String name;
   private Duration duration;

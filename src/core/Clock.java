@@ -5,6 +5,8 @@ import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
+//Class Clock observer. Notifica a los observadores los cambios ocurridos (Proyecto, tasca, intervalo)
+
 public class Clock extends Observable {
   private Timer timer;
   private LocalDateTime date;
