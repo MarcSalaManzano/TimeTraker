@@ -5,6 +5,9 @@ import org.json.JSONObject;
 
 import java.time.format.DateTimeFormatter;
 
+//implementación del patrón de diseño visitor, que utilizamos para recorrer el arbol de actividades y
+//convertirlo en formato Json para poder almacenarlo en un fichero.
+
 public class Visitor {
   public JSONObject visitTask(Task t) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");

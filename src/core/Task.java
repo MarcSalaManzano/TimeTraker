@@ -7,6 +7,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+//Una tarea es un tipo de actividad. El usuario dedica su tiempo a trabajar en tareas. El usuario puede
+//emppezar a trabajar en una tarea, dejar de trabajar en ella, retomarla... de esta forma cada tarea
+//contiene los intervalos de tiempo que el usuario ha dedicado a trabajar en ella.
+
 public class Task extends Activity{
 
   private List<Interval> intervals;
