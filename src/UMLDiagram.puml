@@ -1,6 +1,6 @@
 @startuml
 
-abstract class Controller
+
 abstract class Clock
 abstract class Observable
 abstract class Activity
@@ -12,8 +12,8 @@ abstract class JSONSave
 abstract class Client
 
 
-Controller o--> Activity
-Controller <--> Client
+
+Activity <--> Client
 Activity --> Activity
 Activity <--o Project
 Activity <|-- Project
@@ -24,17 +24,7 @@ Observer <.. Client
 Client <--> JSONSave
 Clock --> Observable
 
-class Controller {
-- {static} Activity root
-- {static} List<Activity> activeTask
---
-+ addTask(String name, String projectName)
-+ addProject(String name, String projectName)
-+ stopTask(String name)
-+ startTask(String name)
-- findActivityByName(String Name)
-+ getActiveTask()
-}
+
 
 class Clock {
 - {static} Timer timer
