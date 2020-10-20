@@ -5,7 +5,7 @@ import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
-//Class Clock observer. Notifica a los observadores los cambios ocurridos (Proyecto, tasca, intervalo)
+//Class Clock observable. Notifica a los observadores en los instantes de tiempo que deben actualizar la información. (Proyecto, tasca, intervalo)
 
 public class Clock extends Observable {
   private Timer timer;
