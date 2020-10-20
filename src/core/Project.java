@@ -7,9 +7,10 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-//Un proyecto es un tipo de actividad. Los proyectos pueden englobar otros proyectos y tareas, y su principal
-//función es contener tareas y proyectos anidados para que el usuario pueda mantener organizadas las
-//actividades a las que dedica su tiempo de trabajo.
+/*Un proyecto es un tipo de actividad. Los proyectos pueden englobar otros proyectos y tareas, y su principal
+función es contener tareas y proyectos anidados para que el usuario pueda mantener organizadas las
+actividades a las que dedica su tiempo de trabajo.
+*/
 
 public class Project extends Activity{
 
