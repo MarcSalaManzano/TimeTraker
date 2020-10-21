@@ -3,8 +3,11 @@ package core;
 import org.json.JSONObject;
 
 import java.time.Duration;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.Observer;
 import java.util.Observable;
 
@@ -23,7 +26,6 @@ public class Interval implements Observer {
   public Interval(Task father){
     duration = Duration.ZERO;
     this.father = father;
-    //get the clock's time for initialDate and initialize finalDate for Duration's calculations
     //Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
     initialDate = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
@@ -36,7 +38,9 @@ public class Interval implements Observer {
   }
 
   @Override
-  public void update(Observable o, Object ob) {
+  public void update(Observable o, Object ob)
+  {
+    //Explicacion ...
     LocalDateTime newDate = (LocalDateTime) ob;
     Duration newDuration = Duration.between(finalDate, newDate); //suma la diferencia de tiempo transcurrido a la duración actual*
     duration = duration.plus(newDuration);
