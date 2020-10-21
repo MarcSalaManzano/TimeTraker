@@ -10,7 +10,7 @@ import java.util.List;
 /*Una tarea es un tipo de actividad. El usuario dedica su tiempo a trabajar en tareas. El usuario puede
 emppezar a trabajar en una tarea, dejar de trabajar en ella, retomarla... de esta forma cada tarea
 contiene los intervalos de tiempo que el usuario ha dedicado a trabajar en ella.
-Una tasca no puede existir por si misma, es decir, debe depender de un padre siempre
+Una tarea no puede existir por si misma, siempre tiene que pertenecer a un proyecto.
 */
 public class Task extends Activity{
 
