@@ -7,7 +7,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /*
-Parte del patrón Composite (Activity y Project).
+Parte del patrón Composite (Activity y Project). Representa la clase Component de este patrón. Tambien forma
+parte del patrón Visitor, siendo esta la clase Element de este patrón.
 En esta clase, se guardan los valores de cada actividad añadida. Además se controla el orden de actuación,
 si tiene que ser un proyecto padre, o una tasca hija, por ejemplo.
  */

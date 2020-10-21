@@ -6,9 +6,11 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /*
-Class Clock observable. Notifica a los observadores (interval y Client),
-en los instantes de tiempo que deben actualizar la información.
-Este patron de diseño nos permite ahorrar codigo
+Class Clock que sigue el patron Observer, representando la clase Observable. 
+Este patron de diseño nos permite crear la clase Clock sin que sea necesario que esta conozca a las clases observadoras.
+Tambien sigue el patron creacionalSingleton, ya que solo es necesario un reloj en el programa.
+Notifica a los observadores (interval y Client), en los instantes de tiempo que deben actualizar la información.
+
 */
 
 public class Clock extends Observable {
