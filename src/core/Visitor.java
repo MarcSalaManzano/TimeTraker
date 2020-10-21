@@ -5,11 +5,12 @@ import org.json.JSONObject;
 
 import java.time.format.DateTimeFormatter;
 
-//Implementación del patrón de diseño visitor, que utilizamos para recorrer el arbol de actividades.
+/*Implementación del patrón de diseño visitor, que utilizamos para recorrer el arbol de actividades. Las clase Activity hace la función
+de Element, mientras que Project, Task y Interval serían ConcreteElements*/
 
 public class Visitor {
   public JSONObject visitTask(Task t) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd  HH:mm:ss");
     JSONObject a = new JSONObject();
     a.put("name", t.getName());
     a.put("class", "Task");

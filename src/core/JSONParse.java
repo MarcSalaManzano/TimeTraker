@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 import org.json.*;
 
 /*
-Patrón Visitor.
+Hace de Cliente del patrón Visitor.
 Esta clase recorre y almacena el árbol de actividades en un fichero en formato Json, también lee el fichero y
 reconstruye el arbol a partir de los datos leídos.
 */
