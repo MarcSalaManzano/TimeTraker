@@ -3,13 +3,16 @@ package core;
 import org.json.JSONObject;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Observer;
 import java.util.Observable;
 
+/*
+Un intervalo contiene su propia fecha final, inicial y el tiempo durante el cual
+ha estado activo.
 
+ */
 public class Interval implements Observer {
 
   private Duration duration;
@@ -17,11 +20,11 @@ public class Interval implements Observer {
   private LocalDateTime initialDate;
   private LocalDateTime finalDate;
 
-  public Interval(Task father)
-  {
+  public Interval(Task father){
     duration = Duration.ZERO;
     this.father = father;
     //get the clock's time for initialDate and initialize finalDate for Duration's calculations
+    //Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
     initialDate = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
   }
@@ -33,14 +36,13 @@ public class Interval implements Observer {
   }
 
   @Override
-  public void update(Observable o, Object ob)
-  {
+  public void update(Observable o, Object ob) {
     LocalDateTime newDate = (LocalDateTime) ob;
-    Duration newDuration = Duration.between(finalDate, newDate); //adds the duration to the current Interval duration
+    Duration newDuration = Duration.between(finalDate, newDate); //suma la diferencia de tiempo transcurrido a la duración actual*
     duration = duration.plus(newDuration);
 
-    father.addDuration(newDuration);  //adds the duration to the task's duration
-    finalDate = newDate; //updates the current finalDate
+    father.addDuration(newDuration);  //suma la duración a la task padre
+    finalDate = newDate; //Actualiza la finalDate con la nueva fecha actual
     father.setFinalDate(finalDate);
   }
 
