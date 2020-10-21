@@ -27,11 +27,12 @@ public class Clock extends Observable {
     return date;
   }
 
-  /*
-  Función que crea un TimerTask que se ejecuta cada 2 segundos en un thread separado, este es el encargado de recuperar la fecha actual y
-  avisar a los Observadores.
-   */
+
   public void start() {
+    /*
+    Función que crea un TimerTask que se ejecuta cada 2 segundos en un thread separado, este es el encargado de recuperar la fecha actual y
+    avisar a los Observadores.
+    */
     TimerTask tt = new TimerTask() {
       @Override
       public void run() {
@@ -43,18 +44,20 @@ public class Clock extends Observable {
     timer.scheduleAtFixedRate(tt, 0, 2*1000);
   }
 
-  /*
-  Función que para la ejecucion del TimerTask.
-   */
+
   public void cancel() {
+    /*
+    Función que para la ejecucion del TimerTask.
+    */
     timer.cancel();
   }
 
-  /*
-  Función necesaria para el patrón Singleton, esta devuelve la instancia del reloj en caso de que exista
-  o la crea y devuelve (Lazy initialization).
-   */
+
   public static Clock getInstance() {
+    /*
+    Función necesaria para el patrón Singleton, esta devuelve la instancia del reloj en caso de que exista
+    o la crea y devuelve (Lazy initialization).
+    */
     if(clock == null) {
       clock = new Clock();
     }
