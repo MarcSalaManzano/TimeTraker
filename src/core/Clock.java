@@ -5,7 +5,8 @@ import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/*Class Clock observable. Notifica a los observadores (Proyecto, tarea e intervalo),
+/*
+Class Clock observable. Notifica a los observadores (interval y Client),
 en los instantes de tiempo que deben actualizar la información.
 Este patron de diseño nos permite ahorrar codigo
 */

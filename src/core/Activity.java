@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /*
+Parte del patrón Composite (Activity y Project).
 En esta clase, se guardan los valores de cada actividad añadida. Además se controla el orden de actuación,
 si tiene que ser un proyecto padre, o una tasca hija, por ejemplo.
  */
@@ -36,9 +37,7 @@ public abstract class Activity {
     return father;
   }
 
-  public LocalDateTime getInitialDate() {
-    return initialDate;
-  }
+  public LocalDateTime getInitialDate() { return initialDate; }
 
   public LocalDateTime getFinalDate() {
     return finalDate;
