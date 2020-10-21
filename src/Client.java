@@ -106,8 +106,11 @@ public class Client implements Observer {
 
   public static void main(String[] args) {
     Client client = new Client();
-    //client.primerTest();
-    client.segundoTest();
+    if(args.length == 0) {
+      client.primerTest();
+    } else {
+      client.segundoTest();
+    }
 
   }
 }
