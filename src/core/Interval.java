@@ -3,15 +3,15 @@ package core;
 import org.json.JSONObject;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.Observer;
 import java.util.Observable;
 
 /*
+Esta clase sigue un patrón Observer, siendo un Observador de la clase Clock, de esta forma se puede actualizar la duración
+de los intervalos de forma sincrona.
+También aplica el patrón visitor, representando un ConcreteElement a visitar.
 Un intervalo contiene su propia fecha final, inicial y el tiempo durante el cual ha estado activo.
  */
 public class Interval implements Observer {

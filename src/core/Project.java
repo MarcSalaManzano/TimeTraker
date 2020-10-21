@@ -50,6 +50,11 @@ public class Project extends Activity{
   }
 
   public Activity find(String name) {
+    /*
+    Función que sirve para devolver una Actividad con el nombre pasado por parametro.
+    En el caso de Project, primero mira si el nombre coincide con el suyo, en el caso que así sea se devuelve a si mismo.
+    En el caso contrario llama a la función find de sus hijos y si uno de estos devuelve algo diferente a null lo devuelve.
+     */
     if(name.equals(this.getName())) {
       return this;
     } else {

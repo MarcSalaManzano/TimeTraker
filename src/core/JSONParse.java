@@ -10,7 +10,7 @@ import org.json.*;
 /*
 Hace de Cliente del patrón Visitor.
 Esta clase recorre y almacena el árbol de actividades en un fichero en formato Json, también lee el fichero y
-reconstruye el arbol a partir de los datos leídos.
+reconstruye el arbol a partir de los datos leídos, creando las instancias de cada clase.
 */
 
 public class JSONParse {
@@ -22,7 +22,6 @@ public class JSONParse {
     } catch (IOException e) {
       e.printStackTrace();
     }
-
   }
 
   public Project loadFile(String fileName) {

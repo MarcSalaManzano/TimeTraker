@@ -8,10 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
+Esta clase sigue el patron Composite, siendo una Leaf de este, ya que es una Activity pero no puede contener otras como hijas.
+Aplica el patrón visitor, representando un ConcreteElement a visitar.
 Una tarea es un tipo de actividad. El usuario dedica su tiempo a trabajar en tareas. El usuario puede
 empezar a trabajar en una tarea, dejar de trabajar en ella, retomarla... de esta forma cada tarea
 contiene los intervalos de tiempo que el usuario ha dedicado a trabajar en ella.
-Una tarea no puede existir por si misma, es decir, depende de un proyecto padre siempre
+Una tarea no puede existir por si misma, es decir, depende de un proyecto padre siempre.
 */
 public class Task extends Activity{
 
@@ -53,7 +55,8 @@ public class Task extends Activity{
 
   public void stopTask() {
     /*
-    Al parar la Task borramos el intervalo de la lista de observers
+    Al parar la Task borramos el intervalo de la lista de observers y cambiamos el estado a inactivo
+    para que no se muestre por pantalla.
      */
     Clock.getInstance().deleteObserver(intervals.get(intervals.size()-1));
     this.status = false;
@@ -76,6 +79,10 @@ public class Task extends Activity{
   }
 
   public Activity find(String name) {
+    /*
+    Función que sirve para devolver una Actividad con el nombre pasado por parametro.
+    En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.
+     */
     if(name.equals(this.getName())) {
       return this;
     } else {

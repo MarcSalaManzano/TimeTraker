@@ -5,8 +5,13 @@ import org.json.JSONObject;
 
 import java.time.format.DateTimeFormatter;
 
-/*Implementación del patrón de diseño visitor, que utilizamos para recorrer el arbol de actividades. Las clase Activity hace la función
-de Element, mientras que Project, Task y Interval serían ConcreteElements*/
+/*Implementación del patrón de diseño visitor, que utilizamos para recorrer el árbol de actividades para crear los JSONObject,
+de esta forma los Element no tienen que conocer la creación de los JSONObject aprovechando el polimorfismo sin necesidad
+de identificar la clase de los hijos.
+Las clase Activity hace la función de Element, mientras que Project, Task y Interval serían ConcreteElements
+Este Visitor se encarga de generar el JSONObject que se guardara en el fichero. Para eso, primero se recoge la información
+de las instancias y después, en el caso el caso que esta tenga hijos, se visita a estos con un nuevo Visitor (Metodos recursivos).
+*/
 
 public class Visitor {
   public JSONObject visitTask(Task t) {

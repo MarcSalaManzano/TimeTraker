@@ -6,9 +6,15 @@ import java.util.List;
 import java.util.Observable;
 import java.util.Observer;
 
+/*
+Esta clase es la encargada de simular las acciones del usuario para la primera entrega.
+Forma parte del patrón Observer, siendo un Observer de la clase Clock, mostrando por cada tick del reloj la
+información de las tareas activas junto a sus padres.
+ */
 public class Client implements Observer {
   List<Activity> active = new ArrayList<>();
   JSONParse parser = new JSONParse();
+
   @Override
   public void update(Observable o, Object arg) {
     for(Activity a : active) {
