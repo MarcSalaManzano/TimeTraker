@@ -6,6 +6,8 @@ import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.Observer;
 import java.util.Observable;
 
@@ -35,8 +37,9 @@ public class Interval implements Observer {
   @Override
   public void update(Observable o, Object ob)
   {
+    //Explicacion ...
     LocalDateTime newDate = (LocalDateTime) ob;
-    Duration newDuration = Duration.between(finalDate, newDate); //adds the duration to the current Interval duration
+    Duration newDuration = Duration.between(finalDate.truncatedTo(ChronoUnit.SECONDS), newDate.truncatedTo(ChronoUnit.SECONDS)); //adds the duration to the current Interval duration
     duration = duration.plus(newDuration);
 
     father.addDuration(newDuration);  //adds the duration to the task's duration
