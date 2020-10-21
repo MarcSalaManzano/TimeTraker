@@ -35,8 +35,7 @@ public class Project extends Activity{
     return v.visitProject(this);
   }
 
-  public void addActivity(Activity a)
-  {
+  public void addActivity(Activity a) {
     childs.add(a);
     a.addFather(this);
   }

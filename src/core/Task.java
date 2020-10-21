@@ -37,6 +37,10 @@ public class Task extends Activity{
   }
 
   public void startTask() {
+    /*
+    Al activar la Task, se marca como activa y se crea un nuevo Interval que se añade a su lista de intervalos, i este nuevo Interval
+    se añade como Observer al clock. Si es la primera vez que se activa, se le asigna la hora actual como hora inicial.
+     */
     LocalDateTime newInitialDate = Clock.getInstance().getDate();
     Interval newInterval = new Interval(this);
     intervals.add(newInterval);
@@ -48,6 +52,9 @@ public class Task extends Activity{
   }
 
   public void stopTask() {
+    /*
+    Al parar la Task borramos el intervalo de la lista de observers
+     */
     Clock.getInstance().deleteObserver(intervals.get(intervals.size()-1));
     this.status = false;
   }
@@ -61,9 +68,7 @@ public class Task extends Activity{
   }
 
   @Override
-  public JSONObject acceptVisitor(Visitor v) {
-    return v.visitTask(this);
-  }
+  public JSONObject acceptVisitor(Visitor v) { return v.visitTask(this); }
 
   public void addInterval(Interval interval) {
     intervals.add(interval);

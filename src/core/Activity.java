@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
 Parte del patrón Composite (Activity y Project). Representa la clase Component de este patrón. Tambien forma
 parte del patrón Visitor, siendo esta la clase Element de este patrón.
 En esta clase, se guardan los valores de cada actividad añadida. Además se controla el orden de actuación,
-si tiene que ser un proyecto padre, o una tasca hija, por ejemplo.
+si tiene que ser un proyecto padre, o una tasca hija, por ejemplo
  */
 
 public abstract class Activity {
@@ -34,15 +34,11 @@ public abstract class Activity {
 
   public void addFather(Activity a) { this.father = a;}
 
-  public Activity getFather() {
-    return father;
-  }
+  public Activity getFather() { return father; }
 
   public LocalDateTime getInitialDate() { return initialDate; }
 
-  public LocalDateTime getFinalDate() {
-    return finalDate;
-  }
+  public LocalDateTime getFinalDate() { return finalDate; }
 
   public void setInitialDate(LocalDateTime initialDate) {
     this.initialDate = initialDate;
@@ -69,9 +65,7 @@ public abstract class Activity {
     }
   }
 
-  public long getDuration() {
-    return duration.getSeconds();
-  }
+  public long getDuration() { return duration.getSeconds(); }
 
   public String getName() { return this.name; }
 

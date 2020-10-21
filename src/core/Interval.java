@@ -12,9 +12,7 @@ import java.util.Observer;
 import java.util.Observable;
 
 /*
-Un intervalo contiene su propia fecha final, inicial y el tiempo durante el cual
-ha estado activo.
-
+Un intervalo contiene su propia fecha final, inicial y el tiempo durante el cual ha estado activo.
  */
 public class Interval implements Observer {
 
@@ -23,7 +21,7 @@ public class Interval implements Observer {
   private LocalDateTime initialDate;
   private LocalDateTime finalDate;
 
-  public Interval(Task father){
+  public Interval(Task father) {
     duration = Duration.ZERO;
     this.father = father;
     //Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
@@ -38,11 +36,13 @@ public class Interval implements Observer {
   }
 
   @Override
-  public void update(Observable o, Object ob)
-  {
-    //Explicacion ...
+  public void update(Observable o, Object ob)  {
+    /*
+    Se llama cada vez que Clock hace notify().
+    Mira la hora y actualiza su fecha final, la duración actual y la de su Task padre.
+     */
     LocalDateTime newDate = (LocalDateTime) ob;
-    Duration newDuration = Duration.between(finalDate, newDate); //suma la diferencia de tiempo transcurrido a la duración actual*
+    Duration newDuration = Duration.between(finalDate, newDate); //suma la diferencia de tiempo transcurrido a la duración actual
     duration = duration.plus(newDuration);
 
     father.addDuration(newDuration);  //suma la duración a la task padre
