@@ -42,6 +42,8 @@ public abstract class Activity {
 
   public LocalDateTime getFinalDate() { return finalDate; }
 
+  /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
+  y propaga los cambios al proyecto o tarea padre hasta root*/
   public void setInitialDate(LocalDateTime initialDate) {
     this.initialDate = initialDate;
     if(father != null) {
@@ -49,7 +51,6 @@ public abstract class Activity {
         this.getFather().setInitialDate(initialDate);
         this.getFather().setFinalDate(initialDate);
       }
-
     }
   }
 
