@@ -1,10 +1,7 @@
 import core.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
 /*
 Esta clase es la encargada de simular las acciones del usuario para la primera entrega.
@@ -17,7 +14,8 @@ public class Client implements Observer {
 
   @Override
   public void update(Observable o, Object arg) {
-    for(Activity a : active) {
+    for(Iterator<Activity> itr = active.iterator(); itr.hasNext();){
+      Activity a = itr.next();
       System.out.println(a);
     }
   }

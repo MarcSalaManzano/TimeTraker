@@ -40,7 +40,7 @@ public class JSONParse {
   }
 
   private Task createTask(JSONObject ob) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     String name = ob.getString("name");
     String sInitialDate = ob.getString("initialDate");
     LocalDateTime initialDate = sInitialDate.equals("null") ? null : LocalDateTime.parse(sInitialDate, formatter); //YY:MM:DD HH:mm:ss
@@ -57,7 +57,7 @@ public class JSONParse {
   }
 
   private Project createProject(JSONObject ob) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     String name = ob.getString("name");
     String sInitialDate = ob.getString("initialDate");
     LocalDateTime initialDate = sInitialDate.equals("null") ? null : LocalDateTime.parse(sInitialDate, formatter); //YY:MM:DD HH:mm:ss
@@ -80,7 +80,7 @@ public class JSONParse {
   }
 
   private Interval createInterval(JSONObject ob) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     String sInitialDate = ob.getString("initialDate");
     LocalDateTime initialDate = sInitialDate.equals("null") ? null : LocalDateTime.parse(sInitialDate, formatter); //YY:MM:DD HH:mm:ss
     String sFinalDate = ob.getString("finalDate");

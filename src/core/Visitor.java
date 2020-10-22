@@ -15,7 +15,7 @@ de las instancias y después, en el caso el caso que esta tenga hijos, se visita
 
 public class Visitor {
   public JSONObject visitTask(Task t) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd  HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     JSONObject a = new JSONObject();
     a.put("name", t.getName());
     a.put("class", "Task");
@@ -32,7 +32,7 @@ public class Visitor {
   }
 
   public JSONObject visitProject(Project p) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     JSONObject a = new JSONObject();
     a.put("name", p.getName());
     a.put("class", "Project");
@@ -49,7 +49,7 @@ public class Visitor {
   }
 
   public JSONObject visitInterval(Interval i) {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     JSONObject a = new JSONObject();
     a.put("class", "Interval");
     a.put("initialDate", i.getInitialDate() == null ? "null" : i.getInitialDate().format(formatter));
