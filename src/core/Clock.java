@@ -45,6 +45,7 @@ public class Clock extends Observable {
   }
 
 
+  //metodo para parar el reloj y finalizar el test
   public void cancel() {
     /*
     Función que para la ejecucion del TimerTask.

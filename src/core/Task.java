@@ -8,12 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Esta clase sigue el patron Composite, siendo una Leaf de este, ya que es una Activity pero no puede contener otras como hijas.
-Aplica el patrón visitor, representando un ConcreteElement a visitar.
-Una tarea es un tipo de actividad. El usuario dedica su tiempo a trabajar en tareas. El usuario puede
-empezar a trabajar en una tarea, dejar de trabajar en ella, retomarla... de esta forma cada tarea
-contiene los intervalos de tiempo que el usuario ha dedicado a trabajar en ella.
-Una tarea no puede existir por si misma, es decir, depende de un proyecto padre siempre.
+Las clase Task, actua como elemento "Leaf", en el patrón de diseño COMPOSITE. Esta clase por su gerarquía y
+programación no puede contener hijos, como la clase "Composite". Por ello solo implementa los métodos de
+"Component", en nuestro caso de Activity.
+También aplica el patrón VISITOR, como elemento "ConcretElement".
+Además como clase, una tarea es un tipo de actividad que solo puede contener intervalos de tiempo.
+Esto se debe a que el trabajo de un usuario se divide en tareas y estas tareas son contavilizadas en dichos
+intervalos. El usuario tiene la capadidad de decidir cuando empezar a trabajar en una tarea, cancelarla,
+pararla para luego retomarla, etc. Por ello dentro de cada tarea se guarda el intervalo de tiempo que se ha
+dedicado a dicha tarea.
 */
 public class Task extends Activity{
 
