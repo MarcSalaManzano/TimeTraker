@@ -5,6 +5,7 @@ import org.json.JSONObject;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Observer;
 import java.util.Observable;
 
@@ -42,7 +43,7 @@ public class Interval implements Observer {
     Mira la hora y actualiza su fecha final, la duración actual y la de su Task padre.
      */
     LocalDateTime newDate = (LocalDateTime) ob;
-    Duration newDuration = Duration.between(finalDate, newDate); //suma la diferencia de tiempo transcurrido a la duración actual
+    Duration newDuration = Duration.between(finalDate.truncatedTo(ChronoUnit.SECONDS), newDate.truncatedTo(ChronoUnit.SECONDS)); //suma la diferencia de tiempo transcurrido a la duración actual
     duration = duration.plus(newDuration);
 
     father.addDuration(newDuration);  //suma la duración a la task padre
