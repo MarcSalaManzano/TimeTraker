@@ -7,10 +7,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 /*
-Parte del patrón Composite (Activity y Project). Representa la clase Component de este patrón. Tambien forma
-parte del patrón Visitor, siendo esta la clase Element de este patrón.
-En esta clase, se guardan los valores de cada actividad añadida. Además se controla el orden de actuación,
-si tiene que ser un proyecto padre, o una tasca hija, por ejemplo
+La clase Activity actua como elemento "Component", en el patrón de diseño COMPOSITE formado por las clases
+Activity y Project, en nustro proyecto.
+También actua como elemento "Element", en el patrón de diseño VISITOR, siendo la clase de la que heredan sus
+"ConcretsElements".
+Por otro lado, se almacenan los valores necesarios cada vez que se añade una actividad a la lista y controla
+su orden de actuación dependiendo del tipo de actividad que sea; un Proyecto padre, una Tarea hije, etc.
  */
 
 public abstract class Activity {

@@ -10,10 +10,11 @@ import java.util.Observer;
 import java.util.Observable;
 
 /*
-Esta clase sigue un patrón Observer, siendo un Observador de la clase Clock, de esta forma se puede actualizar la duración
-de los intervalos de forma sincrona.
-También aplica el patrón visitor, representando un ConcreteElement a visitar.
-Un intervalo contiene su propia fecha final, inicial y el tiempo durante el cual ha estado activo.
+La clase Interval actua como "Observador", en el patrón de diseño OBSERVER de la clase Clock. De esta
+forma se es capaz de actualizar la duración de los intervalos de forma síncrona y precisa.
+Por otro aldo, esta clase debe actuar como elemento "ConcretElement" de VISITOR.
+Como clase, Interval contiene los datos necesarios para guardar un intervalo de tiempo. Duración del mismo,
+fecha inicial y final, y Tarea a la que pertenece este intervalo de tiempo.
  */
 public class Interval implements Observer {
 

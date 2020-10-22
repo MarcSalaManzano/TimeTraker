@@ -8,12 +8,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
-Parte del patrón Composite (Activity y Project). Representa la clase Composite de este patrón, puesto que es
-la clase que contiene actividades (Activity).
-También aplica el patrón visitor, representando un ConcreteElement a visitar.
-Un proyecto es un tipo de actividad. Los proyectos pueden englobar otros proyectos y tareas, y su principal
-función es contener tareas y proyectos anidados para que el usuario pueda mantener organizadas las
-actividades a las que dedica su tiempo de trabajo.
+La clase Project actua como elemento "Composite", en el patrón de diseño COMPOSITE, puesto que es la clase
+que contiene una lista de "Activities", Actividades y hereda los métodos necesarios.
+Además, forma parte del patrón de diseño VISITOR, como elemento "ConcretElement".
+Por otro lado, un Proyecto es un tipo de Actividad (por ello la aplicación de los patrones de diseño).
+Los proyectos pueden englobar otros Proyectos y Tareas, por lo que debemos de ser capazes de almacenar
+tanto Proyectos como Tareas de forma anidada para que el cliente pueda tener una organización óptima
+de sus Tareas, Pryectos, etc.
 */
 
 public class Project extends Activity{
