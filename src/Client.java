@@ -14,15 +14,14 @@ public class Client implements Observer {
 
   @Override
   public void update(Observable o, Object arg) {
-    for(Iterator<Activity> itr = active.iterator(); itr.hasNext();){
-      Activity a = itr.next();
+    for(Activity a : active){
       System.out.println(a);
     }
   }
 
   private void wait(int seconds) {
     try {
-      Thread.sleep(1100*seconds);
+      Thread.sleep(1001*seconds);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
@@ -115,6 +114,5 @@ public class Client implements Observer {
     } else {
       client.segundoTest();
     }
-
   }
 }
