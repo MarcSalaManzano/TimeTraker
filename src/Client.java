@@ -9,19 +9,22 @@ Forma parte del patrón Observer, siendo un Observer de la clase Clock, mostrand
 información de las tareas activas junto a sus padres.
  */
 public class Client implements Observer {
-  List<Activity> active = new ArrayList<>();
+  List<Task> active = new ArrayList<>();
   JSONParse parser = new JSONParse();
 
   @Override
   public void update(Observable o, Object arg) {
-    for(Activity a : active){
-      System.out.println(a);
+    for(Iterator<Task> itr = active.iterator(); itr.hasNext();){
+      Task a = itr.next();
+      if(a.getStatus()) {
+        System.out.println(a);
+      }
     }
   }
 
   private void wait(int seconds) {
     try {
-      Thread.sleep(1001*seconds);
+      Thread.sleep(1000*seconds+1);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
@@ -50,40 +53,37 @@ public class Client implements Observer {
     ptt.addActivity(readHandout);
     ptt.addActivity(firstMilestone);
     Clock c = Clock.getInstance();
+    active.add(transport);
+    active.add(firstList);
+    active.add(secondList);
+    active.add(readHandout);
+    active.add(firstMilestone);
     c.addObserver(this);
     c.start();
     System.out.println("Start test");
     System.out.println("Transportation start");
     transport.startTask();
-    active.add(transport);
     wait(4);
     System.out.println("Transportation stop");
     transport.stopTask();
-    active.remove(transport);
     wait(2);
     System.out.println("First list start");
     firstList.startTask();
-    active.add(firstList);
     wait(6);
     System.out.println("Second list start");
     secondList.startTask();
-    active.add(secondList);
     wait(4);
     System.out.println("First list stop");
     firstList.stopTask();
-    active.remove(firstList);
     wait(2);
     System.out.println("Second list stop");
     secondList.stopTask();
-    active.remove(secondList);
     wait(2);
     System.out.println("Transportation start");
     transport.startTask();
-    active.add(transport);
     wait(4);
     System.out.println("Transportation stop");
     transport.stopTask();
-    active.remove(transport);
     parser.saveFile(root, "test.json");
     c.cancel();
   }
@@ -94,14 +94,13 @@ public class Client implements Observer {
     c.start();
     Project root = parser.loadFile("test.json");
     Task transport = (Task) root.find("transportation");
-    transport.startTask();
+    Task firstList = (Task) root.find("first list");
     active.add(transport);
+    active.add(firstList);
+    transport.startTask();
     wait(4);
     transport.stopTask();
-    active.remove(transport);
     wait(2);
-    Task firstList = (Task) root.find("first list");
-    active.add(firstList);
     firstList.startTask();
     wait(6);
     c.cancel();
@@ -114,5 +113,6 @@ public class Client implements Observer {
     } else {
       client.segundoTest();
     }
+
   }
 }
