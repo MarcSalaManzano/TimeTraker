@@ -94,14 +94,13 @@ public class Client implements Observer {
     c.start();
     Project root = parser.loadFile("test.json");
     Task transport = (Task) root.find("transportation");
-    transport.startTask();
+    Task firstList = (Task) root.find("first list");
     active.add(transport);
+    active.add(firstList);
+    transport.startTask();
     wait(4);
     transport.stopTask();
-    active.remove(transport);
     wait(2);
-    Task firstList = (Task) root.find("first list");
-    active.add(firstList);
     firstList.startTask();
     wait(6);
     c.cancel();
