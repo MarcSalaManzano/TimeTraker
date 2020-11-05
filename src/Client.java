@@ -19,14 +19,14 @@ public class Client implements Observer {
     for (Task a : active) {
       if (a.getStatus()) {
         logger.trace(a.toString());
-        //System.out.println(a);
+        // System.out.println(a);
       }
     }
   }
 
   private void wait(int seconds) {
     try {
-      Thread.sleep(1001*seconds);
+      Thread.sleep(1001 * seconds);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
@@ -110,11 +110,10 @@ public class Client implements Observer {
 
   public static void main(String[] args) {
     Client client = new Client();
-    if(args.length == 0) {
+    if (args.length == 0) {
       client.primerTest();
     } else {
       client.segundoTest();
     }
-
   }
 }

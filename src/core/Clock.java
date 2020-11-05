@@ -23,29 +23,28 @@ public class Clock extends Observable {
     date = LocalDateTime.now();
   }
 
-  public LocalDateTime getDate(){
+  public LocalDateTime getDate() {
     return date;
   }
-
 
   public void start() {
     /*
     Función que crea un TimerTask que se ejecuta cada 2 segundos en un thread separado, este es el encargado de recuperar la fecha actual y
     avisar a los Observadores.
     */
-    TimerTask tt = new TimerTask() {
-      @Override
-      public void run() {
-        date = LocalDateTime.now();
-        setChanged();
-        notifyObservers(date);
-      }
-    };
-    TIMER.scheduleAtFixedRate(tt, 0, 2*1000);
+    TimerTask tt =
+        new TimerTask() {
+          @Override
+          public void run() {
+            date = LocalDateTime.now();
+            setChanged();
+            notifyObservers(date);
+          }
+        };
+    TIMER.scheduleAtFixedRate(tt, 0, 2 * 1000);
   }
 
-
-  //metodo para parar el reloj y finalizar el test
+  // metodo para parar el reloj y finalizar el test
   public void cancel() {
     /*
     Función que para la ejecucion del TimerTask.
@@ -53,16 +52,14 @@ public class Clock extends Observable {
     TIMER.cancel();
   }
 
-
   public static Clock getInstance() {
     /*
     Función necesaria para el patrón Singleton, esta devuelve la instancia del reloj en caso de que exista
     o la crea y devuelve (Lazy initialization).
     */
-    if(clock == null) {
+    if (clock == null) {
       clock = new Clock();
     }
     return clock;
   }
-
 }

@@ -18,7 +18,7 @@ intervalos. El usuario tiene la capadidad de decidir cuando empezar a trabajar e
 pararla para luego retomarla, etc. Por ello dentro de cada tarea se guarda el intervalo de tiempo que se ha
 dedicado a dicha tarea.
 */
-public class Task extends Activity{
+public class Task extends Activity {
 
   private List<Interval> intervals;
   private boolean status;
@@ -50,7 +50,7 @@ public class Task extends Activity{
     Interval newInterval = new Interval(this);
     intervals.add(newInterval);
     Clock.getInstance().addObserver(newInterval);
-    if(getInitialDate() == null) {
+    if (getInitialDate() == null) {
       this.setInitialDate(newInitialDate);
     }
     this.status = true;
@@ -61,20 +61,24 @@ public class Task extends Activity{
     Al parar la Task borramos el intervalo de la lista de observers y cambiamos el estado a inactivo
     para que no se muestre por pantalla.
      */
-    Clock.getInstance().deleteObserver(intervals.get(intervals.size()-1));
+    Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
     this.status = false;
   }
 
-  public List<Interval> getIntervals() { return this.intervals; }
-
-  @Override
-  public String toString() {
-    String description = intervals.get(intervals.size()-1).toString();
-    return description+super.toString();
+  public List<Interval> getIntervals() {
+    return this.intervals;
   }
 
   @Override
-  public JSONObject acceptVisitor(Visitor v) { return v.visitTask(this); }
+  public String toString() {
+    String description = intervals.get(intervals.size() - 1).toString();
+    return description + super.toString();
+  }
+
+  @Override
+  public JSONObject acceptVisitor(Visitor v) {
+    return v.visitTask(this);
+  }
 
   public void addInterval(Interval interval) {
     intervals.add(interval);
@@ -86,7 +90,7 @@ public class Task extends Activity{
     Función que sirve para devolver una Actividad con el nombre pasado por parametro.
     En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.
      */
-    if(name.equals(this.getName())) {
+    if (name.equals(this.getName())) {
       return this;
     } else {
       return null;

@@ -19,11 +19,12 @@ public class Visitor {
     JSONObject a = new JSONObject();
     a.put("name", t.getName());
     a.put("class", "Task");
-    a.put("initialDate", t.getInitialDate() == null ? "null" : t.getInitialDate().format(formatter));
+    a.put(
+        "initialDate", t.getInitialDate() == null ? "null" : t.getInitialDate().format(formatter));
     a.put("finalDate", t.getFinalDate() == null ? "null" : t.getFinalDate().format(formatter));
     a.put("duration", t.getDuration());
     JSONArray b = new JSONArray();
-    for(Interval inter : t.getIntervals()) {
+    for (Interval inter : t.getIntervals()) {
       JSONObject ob = inter.acceptVisitor(new Visitor());
       b.put(ob);
     }
@@ -36,11 +37,12 @@ public class Visitor {
     JSONObject a = new JSONObject();
     a.put("name", p.getName());
     a.put("class", "Project");
-    a.put("initialDate", p.getInitialDate() == null ? "null" : p.getInitialDate().format(formatter));
+    a.put(
+        "initialDate", p.getInitialDate() == null ? "null" : p.getInitialDate().format(formatter));
     a.put("finalDate", p.getFinalDate() == null ? "null" : p.getFinalDate().format(formatter));
     a.put("duration", p.getDuration());
     JSONArray b = new JSONArray();
-    for(Activity act : p.getChilds()) {
+    for (Activity act : p.getChilds()) {
       JSONObject ob = act.acceptVisitor(new Visitor());
       b.put(ob);
     }
@@ -52,7 +54,8 @@ public class Visitor {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     JSONObject a = new JSONObject();
     a.put("class", "Interval");
-    a.put("initialDate", i.getInitialDate() == null ? "null" : i.getInitialDate().format(formatter));
+    a.put(
+        "initialDate", i.getInitialDate() == null ? "null" : i.getInitialDate().format(formatter));
     a.put("finalDate", i.getFinalDate() == null ? "null" : i.getFinalDate().format(formatter));
     a.put("duration", i.getDuration().toSeconds());
     return a;

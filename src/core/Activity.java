@@ -27,26 +27,35 @@ public abstract class Activity {
     duration = Duration.ZERO;
   }
 
-  public Activity(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
+  public Activity(
+      String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     this.name = name;
     this.initialDate = initialDate;
     this.finalDate = finalDate;
     this.duration = duration;
   }
 
-  public void addFather(Activity a) { this.father = a;}
+  public void addFather(Activity a) {
+    this.father = a;
+  }
 
-  public Activity getFather() { return father; }
+  public Activity getFather() {
+    return father;
+  }
 
-  public LocalDateTime getInitialDate() { return initialDate; }
+  public LocalDateTime getInitialDate() {
+    return initialDate;
+  }
 
-  public LocalDateTime getFinalDate() { return finalDate; }
+  public LocalDateTime getFinalDate() {
+    return finalDate;
+  }
 
   /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
   y propaga los cambios al proyecto o tarea padre hasta root*/
   public void setInitialDate(LocalDateTime initialDate) {
     this.initialDate = initialDate;
-    if(father != null) {
+    if (father != null) {
       if (this.getFather().getInitialDate() == null) {
         this.getFather().setInitialDate(initialDate);
         this.getFather().setFinalDate(initialDate);
@@ -56,33 +65,41 @@ public abstract class Activity {
 
   public void setFinalDate(LocalDateTime finalDate) {
     this.finalDate = finalDate;
-    if(father != null) {
+    if (father != null) {
       father.setFinalDate(finalDate);
     }
   }
 
   public void addDuration(Duration duration) {
     this.duration = this.duration.plus(duration);
-    if(father != null) {
+    if (father != null) {
       father.addDuration(duration);
     }
   }
 
-  public long getDuration() { return duration.getSeconds(); }
+  public long getDuration() {
+    return duration.getSeconds();
+  }
 
-  public String getName() { return this.name; }
+  public String getName() {
+    return this.name;
+  }
 
   @Override
   public String toString() {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     String name = this.getName();
     String fatherName = this.getFather() == null ? "null" : this.getFather().getName();
-    String startTime = this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter);
+    String startTime =
+        this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter);
     String finalDate = this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter);
     long duration = this.getDuration();
-    String description = String.format("Activity %-15s child of %-15s %-20s %-20s %d%n", name, fatherName, startTime, finalDate, duration);
-    if(father != null) {
-      description = description+father.toString();
+    String description =
+        String.format(
+            "Activity %-15s child of %-15s %-20s %-20s %d%n",
+            name, fatherName, startTime, finalDate, duration);
+    if (father != null) {
+      description = description + father.toString();
     }
     return description;
   }
