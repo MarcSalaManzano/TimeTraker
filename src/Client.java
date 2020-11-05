@@ -2,6 +2,8 @@ import core.*;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
 Esta clase es la encargada de simular las acciones del usuario para la primera entrega.
@@ -11,6 +13,7 @@ información de las tareas activas junto a sus padres.
 public class Client implements Observer {
   List<Task> active = new ArrayList<>();
   JSONParse parser = new JSONParse();
+  Logger logger = LoggerFactory.getLogger("Client");
 
   @Override
   public void update(Observable o, Object arg) {
