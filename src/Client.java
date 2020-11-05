@@ -2,10 +2,7 @@ import core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.time.LocalDateTime;
 import java.util.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /*
 Esta clase es la encargada de simular las acciones del usuario para la primera entrega.
@@ -19,10 +16,9 @@ public class Client implements Observer {
 
   @Override
   public void update(Observable o, Object arg) {
-    for(Iterator<Task> itr = active.iterator(); itr.hasNext();){
-      Task a = itr.next();
-      if(a.getStatus()) {
-        logger.info(a.toString());
+    for (Task a : active) {
+      if (a.getStatus()) {
+        logger.trace(a.toString());
         //System.out.println(a);
       }
     }

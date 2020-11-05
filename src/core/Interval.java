@@ -20,20 +20,20 @@ public class Interval implements Observer {
 
   private Duration duration;
   private Task father;
-  private LocalDateTime initialDate;
+  private final LocalDateTime INITIAL_DATE;
   private LocalDateTime finalDate;
 
   public Interval(Task father) {
     duration = Duration.ZERO;
     this.father = father;
     //Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
-    initialDate = Clock.getInstance().getDate();
+    INITIAL_DATE = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
   }
 
   public Interval(LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     this.duration = duration;
-    this.initialDate = initialDate;
+    this.INITIAL_DATE = initialDate;
     this.finalDate = finalDate;
   }
 
@@ -53,7 +53,7 @@ public class Interval implements Observer {
   }
 
   public LocalDateTime getInitialDate() {
-    return initialDate;
+    return INITIAL_DATE;
   }
 
   public LocalDateTime getFinalDate() {

@@ -18,7 +18,6 @@ public class JSONParse {
     JSONObject object = activity.acceptVisitor(new Visitor());
     try (FileWriter file = new FileWriter(fileName)) {
       file.write(object.toString());
-      file.close();
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -68,12 +67,9 @@ public class JSONParse {
     JSONArray activities = ob.getJSONArray("activities");
     for(int i = 0; i<activities.length(); i++) {
       JSONObject child = activities.getJSONObject(i);
-      switch (child.getString("class")){
-        case "Project":
-          newProject.addActivity(createProject(child));
-          break;
-        case "Task":
-          newProject.addActivity(createTask(child));
+      switch (child.getString("class")) {
+        case "Project" -> newProject.addActivity(createProject(child));
+        case "Task" -> newProject.addActivity(createTask(child));
       }
     }
     return newProject;
@@ -86,7 +82,6 @@ public class JSONParse {
     String sFinalDate = ob.getString("finalDate");
     LocalDateTime finalDate = sFinalDate.equals("null") ? null : LocalDateTime.parse(sFinalDate, formatter);
     Duration duration = Duration.ofSeconds(ob.getInt("duration"));
-    Interval newInterval = new Interval(initialDate, finalDate, duration);
-    return newInterval;
+    return new Interval(initialDate, finalDate, duration);
   }
 }

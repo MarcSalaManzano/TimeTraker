@@ -14,12 +14,12 @@ Notifica a los observadores (interval y Client), en los instantes de tiempo que 
 */
 
 public class Clock extends Observable {
-  private Timer timer;
+  private final Timer TIMER;
   private LocalDateTime date;
   private static Clock clock;
 
   private Clock() {
-    timer = new Timer();
+    TIMER = new Timer();
     date = LocalDateTime.now();
   }
 
@@ -41,7 +41,7 @@ public class Clock extends Observable {
         notifyObservers(date);
       }
     };
-    timer.scheduleAtFixedRate(tt, 0, 2*1000);
+    TIMER.scheduleAtFixedRate(tt, 0, 2*1000);
   }
 
 
@@ -50,7 +50,7 @@ public class Clock extends Observable {
     /*
     Función que para la ejecucion del TimerTask.
     */
-    timer.cancel();
+    TIMER.cancel();
   }
 
 
