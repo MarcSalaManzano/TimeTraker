@@ -1,4 +1,6 @@
 import core.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -11,20 +13,22 @@ información de las tareas activas junto a sus padres.
 public class Client implements Observer {
   List<Task> active = new ArrayList<>();
   JSONParse parser = new JSONParse();
+  Logger logger = LoggerFactory.getLogger("Client");
 
   @Override
   public void update(Observable o, Object arg) {
     for(Iterator<Task> itr = active.iterator(); itr.hasNext();){
       Task a = itr.next();
       if(a.getStatus()) {
-        System.out.println(a);
+        logger.info(a.toString());
+        //System.out.println(a);
       }
     }
   }
 
   private void wait(int seconds) {
     try {
-      Thread.sleep(1000*seconds+1);
+      Thread.sleep(1001*seconds);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
