@@ -8,8 +8,9 @@ abstract class Interval
 abstract class Observer
 abstract class Task
 abstract class Project
-abstract class JSONSave
+abstract class JSONParse
 abstract class Client
+abstract class Visitor
 
 
 
@@ -21,8 +22,11 @@ Activity <|-- Task
 Task o--> Interval
 Interval ..> Observer
 Observer <.. Client
-Client <--> JSONSave
+Client <--> JSONParse
 Clock --> Observable
+JSONParse --> Visitor
+Activity --> Visitor
+Interval --> Visitor
 
 
 
@@ -107,13 +111,20 @@ class Client{
 }
 
 
-class JSONSave{
+class JSONParse{
 --
 + saveFile(Activity activity, String fileName)
 + loadFile(String fileName)
 + createTask(JSONObject ob)
 + createProject(JSONObject ob)
 + createInterval(JSONObject ob)
+}
+
+class Visitor {
+--
++ JSONObject visitTask(Task t)
++ JSONObject visitProject(Project p)
++ JSONObject visitInterval(Interval i)
 }
 
 

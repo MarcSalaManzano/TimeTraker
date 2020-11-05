@@ -4,6 +4,8 @@ import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
 Esta clase es la encargada de simular las acciones del usuario para la primera entrega.
@@ -64,29 +66,29 @@ public class Client implements Observer {
     active.add(firstMilestone);
     c.addObserver(this);
     c.start();
-    System.out.println("Start test");
-    System.out.println("Transportation start");
+    logger.trace("Start test");
+    logger.trace("Transportation start");
     transport.startTask();
     wait(4);
-    System.out.println("Transportation stop");
+    logger.trace("Transportation stop");
     transport.stopTask();
     wait(2);
-    System.out.println("First list start");
+    logger.trace("First list start");
     firstList.startTask();
     wait(6);
-    System.out.println("Second list start");
+    logger.trace("Second list start");
     secondList.startTask();
     wait(4);
-    System.out.println("First list stop");
+    logger.trace("First list stop");
     firstList.stopTask();
     wait(2);
-    System.out.println("Second list stop");
+    logger.trace("Second list stop");
     secondList.stopTask();
     wait(2);
-    System.out.println("Transportation start");
+    logger.trace("Transportation start");
     transport.startTask();
     wait(4);
-    System.out.println("Transportation stop");
+    logger.trace("Transportation stop");
     transport.stopTask();
     parser.saveFile(root, "test.json");
     c.cancel();
