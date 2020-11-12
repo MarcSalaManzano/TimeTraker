@@ -1,5 +1,6 @@
 package core;
 
+import Visitor.Visitor;
 import org.json.JSONObject;
 
 import java.time.Duration;
@@ -71,12 +72,15 @@ public class Task extends Activity {
 
   @Override
   public String toString() {
-    String description = intervals.get(intervals.size() - 1).toString();
-    return description + super.toString();
+    return super.toString();
+  }
+
+  public Interval getLastInterval() {
+    return intervals.get(intervals.size() - 1);
   }
 
   @Override
-  public JSONObject acceptVisitor(Visitor v) {
+  public Object acceptVisitor(Visitor v) {
     return v.visitTask(this);
   }
 

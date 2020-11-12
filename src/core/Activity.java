@@ -1,5 +1,6 @@
 package core;
 
+import Visitor.Visitor;
 import org.json.JSONObject;
 
 import java.time.Duration;
@@ -98,13 +99,10 @@ public abstract class Activity {
         String.format(
             "Activity %-15s child of %-15s %-20s %-20s %d%n",
             name, fatherName, startTime, finalDate, duration);
-    if (father != null) {
-      description = description + father.toString();
-    }
     return description;
   }
 
-  public abstract JSONObject acceptVisitor(Visitor v);
+  public abstract Object acceptVisitor(Visitor v);
 
   public abstract Activity find(String name);
 }

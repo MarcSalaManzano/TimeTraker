@@ -10,7 +10,7 @@ abstract class Task
 abstract class Project
 abstract class JSONParse
 abstract class Client
-abstract class Visitor
+abstract class Visitor.Visitor
 
 
 
@@ -24,9 +24,9 @@ Interval ..> Observer
 Observer <.. Client
 Client <--> JSONParse
 Clock --> Observable
-JSONParse --> Visitor
-Activity --> Visitor
-Interval --> Visitor
+JSONParse --> Visitor.Visitor
+Activity --> Visitor.Visitor
+Interval --> Visitor.Visitor
 
 
 
@@ -72,7 +72,7 @@ class Interval{
 + LocalDateTime getFinalDate()
 + Duration getDuration()
 + String toString()
-+ JSONObject acceptVisitor(Visitor v)
++ JSONObject acceptVisitor(Visitor.Visitor v)
 + setFather(Task t)
 }
 
@@ -94,7 +94,7 @@ class Project{
 --
 + Project(String name)
 + Project(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
-+ JSONObject acceptVisitor(Visitor v)
++ JSONObject acceptVisitor(Visitor.Visitor v)
 + addActivity(Activity a)
 + removeActivity(Activity a)
 + List<Activity> getChilds()
@@ -120,7 +120,7 @@ class JSONParse{
 + createInterval(JSONObject ob)
 }
 
-class Visitor {
+class Visitor.Visitor {
 --
 + JSONObject visitTask(Task t)
 + JSONObject visitProject(Project p)

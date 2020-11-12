@@ -1,5 +1,5 @@
 package core;
-
+import Visitor.Visitor;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,11 +9,11 @@ import java.time.format.DateTimeFormatter;
 de esta forma los Element no tienen que conocer la creación de los JSONObject aprovechando el polimorfismo sin necesidad
 de identificar la clase de los hijos.
 Las clase Activity hace la función de Element, mientras que Project, Task y Interval serían ConcreteElements
-Este Visitor se encarga de generar el JSONObject que se guardara en el fichero. Para eso, primero se recoge la información
-de las instancias y después, en el caso el caso que esta tenga hijos, se visita a estos con un nuevo Visitor (Metodos recursivos).
+Este Visitor.Visitor se encarga de generar el JSONObject que se guardara en el fichero. Para eso, primero se recoge la información
+de las instancias y después, en el caso el caso que esta tenga hijos, se visita a estos con un nuevo Visitor.Visitor (Metodos recursivos).
 */
 
-public class Visitor {
+public class JSONVisitor implements Visitor{
   public JSONObject visitTask(Task t) {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
     JSONObject a = new JSONObject();
@@ -25,7 +25,7 @@ public class Visitor {
     a.put("duration", t.getDuration());
     JSONArray b = new JSONArray();
     for (Interval inter : t.getIntervals()) {
-      JSONObject ob = inter.acceptVisitor(new Visitor());
+      JSONObject ob = (JSONObject) inter.acceptVisitor(new JSONVisitor());
       b.put(ob);
     }
     a.put("activities", b);
@@ -43,7 +43,7 @@ public class Visitor {
     a.put("duration", p.getDuration());
     JSONArray b = new JSONArray();
     for (Activity act : p.getChilds()) {
-      JSONObject ob = act.acceptVisitor(new Visitor());
+      JSONObject ob = (JSONObject) act.acceptVisitor(new JSONVisitor());
       b.put(ob);
     }
     a.put("activities", b);

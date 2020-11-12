@@ -18,7 +18,7 @@ public class Client implements Observer {
   public void update(Observable o, Object arg) {
     for (Task a : active) {
       if (a.getStatus()) {
-        logger.trace(a.toString());
+        a.acceptVisitor(new PrintVisitor());
         // System.out.println(a);
       }
     }

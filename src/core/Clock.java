@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 import java.util.Observable;
 import java.util.Timer;
 import java.util.TimerTask;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
 Class Clock que sigue el patron Observer, representando la clase Observable.
@@ -17,6 +19,7 @@ public class Clock extends Observable {
   private final Timer TIMER;
   private LocalDateTime date;
   private static Clock clock;
+  private Logger logger = LoggerFactory.getLogger("core.Clock");
 
   private Clock() {
     TIMER = new Timer();
@@ -49,6 +52,7 @@ public class Clock extends Observable {
     /*
     Función que para la ejecucion del TimerTask.
     */
+    logger.warn("Clock canceled");
     TIMER.cancel();
   }
 

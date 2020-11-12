@@ -1,5 +1,6 @@
 package core;
 
+import Visitor.Visitor;
 import org.json.JSONObject;
 
 import java.time.Duration;
@@ -8,6 +9,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Observer;
 import java.util.Observable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
 La clase Interval actua como "Observador", en el patrón de diseño OBSERVER de la clase Clock. De esta
@@ -22,6 +25,7 @@ public class Interval implements Observer {
   private Task father;
   private final LocalDateTime INITIAL_DATE;
   private LocalDateTime finalDate;
+  private Logger logger = LoggerFactory.getLogger("core.Interval");
 
   public Interval(Task father) {
     duration = Duration.ZERO;
@@ -29,12 +33,16 @@ public class Interval implements Observer {
     // Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
     INITIAL_DATE = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
+    logger.debug("Interval Constructor | Initial Date: "+INITIAL_DATE.toString());
   }
 
   public Interval(LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     this.duration = duration;
     this.INITIAL_DATE = initialDate;
     this.finalDate = finalDate;
+    logger.debug("Interval Constructor | Initial Date: "+INITIAL_DATE.toString());
+    logger.debug("Interval Constructor | Final Date: "+this.finalDate.toString());
+    logger.debug("Interval Constructor | Duration: "+this.duration.toSeconds());
   }
 
   @Override
@@ -50,10 +58,13 @@ public class Interval implements Observer {
             newDate.truncatedTo(
                 ChronoUnit
                     .SECONDS)); // suma la diferencia de tiempo transcurrido a la duración actual
+    if(newDuration.getSeconds() != 2) { logger.warn("Interval Update | Duration between old final date and new final date != 2"); }
+    logger.debug("Interval Update | Old duration: "+duration.toString());
     duration = duration.plus(newDuration);
-
+    logger.debug("Interval Update | New duration: "+duration.toString());
     father.addDuration(newDuration); // suma la duración a la task padre
     finalDate = newDate; // Actualiza la finalDate con la nueva fecha actual
+    logger.debug("Interval Update | New final date: "+finalDate.toString());
     father.setFinalDate(finalDate);
   }
 
@@ -82,11 +93,12 @@ public class Interval implements Observer {
         "", fatherName, startTime, finalDate, duration);
   }
 
-  public JSONObject acceptVisitor(Visitor v) {
+  public Object acceptVisitor(Visitor v) {
     return v.visitInterval(this);
   }
 
   public void setFather(Task t) {
     father = t;
   }
+
 }

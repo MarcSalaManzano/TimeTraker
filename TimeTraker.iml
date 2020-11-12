@@ -10,5 +10,6 @@
     <orderEntry type="library" name="org.json:json:20200518" level="project" />
     <orderEntry type="library" name="org.json:json:20151123" level="project" />
     <orderEntry type="library" name="ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" name="org.slf4j:slf4j-ext:1.7.30" level="project" />
   </component>
 </module>

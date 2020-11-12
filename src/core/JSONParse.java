@@ -8,14 +8,14 @@ import java.time.format.DateTimeFormatter;
 import org.json.*;
 
 /*
-Hace de Cliente del patrón Visitor.
+Hace de Cliente del patrón Visitor.Visitor.
 Esta clase recorre y almacena el árbol de actividades en un fichero en formato Json, también lee el fichero y
 reconstruye el arbol a partir de los datos leídos, creando las instancias de cada clase.
 */
 
 public class JSONParse {
   public void saveFile(Activity activity, String fileName) {
-    JSONObject object = activity.acceptVisitor(new Visitor());
+    JSONObject object = (JSONObject) activity.acceptVisitor(new JSONVisitor());
     try (FileWriter file = new FileWriter(fileName)) {
       file.write(object.toString());
     } catch (IOException e) {

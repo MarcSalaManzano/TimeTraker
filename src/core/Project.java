@@ -1,5 +1,6 @@
 package core;
 
+import Visitor.Visitor;
 import org.json.JSONObject;
 
 import java.time.Duration;
@@ -33,7 +34,7 @@ public class Project extends Activity {
   }
 
   @Override
-  public JSONObject acceptVisitor(Visitor v) {
+  public Object acceptVisitor(Visitor v) {
     return v.visitProject(this);
   }
 
