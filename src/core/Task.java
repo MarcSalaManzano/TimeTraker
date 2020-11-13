@@ -21,83 +21,83 @@ dedicado a dicha tarea.
 */
 public class Task extends Activity {
 
-  private List<Interval> intervals;
-  private boolean status;
+    private List <Interval> intervals;
+    private boolean status;
 
-  public Task(String name) {
-    super(name);
-    intervals = new ArrayList<>();
-  }
+    public Task ( String name ) {
+        super(name);
+        intervals = new ArrayList <>();
+    }
 
-  public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
-    super(name, initialDate, finalDate, duration);
-    intervals = new ArrayList<>();
-  }
+    public Task ( String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration ) {
+        super(name, initialDate, finalDate, duration);
+        intervals = new ArrayList <>();
+    }
 
-  public boolean getStatus() {
-    return status;
-  }
+    public boolean getStatus () {
+        return status;
+    }
 
-  public void setStatus(boolean status) {
-    this.status = status;
-  }
+    public void setStatus ( boolean status ) {
+        this.status = status;
+    }
 
-  public void startTask() {
+    public void startTask () {
     /*
     Al activar la Task, se marca como activa y se crea un nuevo Interval que se añade a su lista de intervalos, i este nuevo Interval
     se añade como Observer al clock. Si es la primera vez que se activa, se le asigna la hora actual como hora inicial.
      */
-    LocalDateTime newInitialDate = Clock.getInstance().getDate();
-    Interval newInterval = new Interval(this);
-    intervals.add(newInterval);
-    Clock.getInstance().addObserver(newInterval);
-    if (getInitialDate() == null) {
-      this.setInitialDate(newInitialDate);
+        LocalDateTime newInitialDate = Clock.getInstance().getDate();
+        Interval newInterval = new Interval(this);
+        intervals.add(newInterval);
+        Clock.getInstance().addObserver(newInterval);
+        if (getInitialDate() == null) {
+            this.setInitialDate(newInitialDate);
+        }
+        this.status = true;
     }
-    this.status = true;
-  }
 
-  public void stopTask() {
+    public void stopTask () {
     /*
     Al parar la Task borramos el intervalo de la lista de observers y cambiamos el estado a inactivo
     para que no se muestre por pantalla.
      */
-    Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
-    this.status = false;
-  }
+        Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
+        this.status = false;
+    }
 
-  public List<Interval> getIntervals() {
-    return this.intervals;
-  }
+    public List <Interval> getIntervals () {
+        return this.intervals;
+    }
 
-  @Override
-  public String toString() {
-    return super.toString();
-  }
+    @Override
+    public String toString () {
+        return super.toString();
+    }
 
-  public Interval getLastInterval() {
-    return intervals.get(intervals.size() - 1);
-  }
+    public Interval getLastInterval () {
+        return intervals.get(intervals.size() - 1);
+    }
 
-  @Override
-  public Object acceptVisitor(Visitor v) {
-    return v.visitTask(this);
-  }
+    @Override
+    public Object acceptVisitor ( Visitor v ) {
+        return v.visitTask(this);
+    }
 
-  public void addInterval(Interval interval) {
-    intervals.add(interval);
-    interval.setFather(this);
-  }
+    public void addInterval ( Interval interval ) {
+        intervals.add(interval);
+        interval.setFather(this);
+    }
 
-  public Activity find(String name) {
+    public Activity find ( String name ) {
     /*
     Función que sirve para devolver una Actividad con el nombre pasado por parametro.
     En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.
      */
-    if (name.equals(this.getName())) {
-      return this;
-    } else {
-      return null;
+        if (name.equals(this.getName())) {
+            return this;
+        } else {
+            return null;
+        }
     }
-  }
 }
