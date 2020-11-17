@@ -1,4 +1,5 @@
 import core.*;
+import milestone2.VisitorTags;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -110,12 +111,54 @@ public class Client implements Observer {
     c.cancel();
   }
 
+  public void tercertTest() {
+    Project root = new Project("root");
+    Project sd = new Project("software design");
+    Project st = new Project("software testing");
+    Project db = new Project("databases");
+    Task transport = new Task("transportation");
+    sd.addTag("java");
+    sd.addTag("flutter");
+    st.addTag("c++");
+    st.addTag("Java");
+    st.addTag("python");
+    db.addTag("SQL");
+    db.addTag("python");
+    db.addTag("C++");
+    root.addActivity(transport);
+    root.addActivity(sd);
+    root.addActivity(st);
+    root.addActivity(db);
+    Project ptt = new Project("project time tracker");
+    Project prob = new Project("problems");
+    sd.addActivity(prob);
+    sd.addActivity(ptt);
+    Task firstList = new Task("first list");
+    firstList.addTag("java");
+    Task secondList = new Task("second list");
+    secondList.addTag("Dart");
+    prob.addActivity(firstList);
+    prob.addActivity(secondList);
+    Task readHandout = new Task("read handout");
+    Task firstMilestone = new Task("first milestone");
+    firstMilestone.addTag("Java");
+    firstMilestone.addTag("IntelliJ");
+    ptt.addActivity(readHandout);
+    ptt.addActivity(firstMilestone);
+    root.acceptVisitor(new VisitorTags("c++"));
+    root.acceptVisitor(new VisitorTags("Java"));
+    root.acceptVisitor(new VisitorTags("C++"));
+    root.acceptVisitor(new VisitorTags("no"));
+  }
+
   public static void main(String[] args) {
     Client client = new Client();
     if (args.length == 0) {
       client.primerTest();
-    } else {
+    } else if(args.length == 1){
       client.segundoTest();
+    } else {
+      client.tercertTest();
     }
   }
 }

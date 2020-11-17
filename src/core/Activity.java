@@ -1,7 +1,9 @@
 package core;
 
 import Visitor.Visitor;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
+
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -23,6 +25,7 @@ public abstract class Activity {
   private Activity father;
   private LocalDateTime initialDate = null;
   private LocalDateTime finalDate = null;
+  private List<String> tags = new ArrayList();
 
   public Activity(String name) {
     this.name = name;
@@ -39,6 +42,18 @@ public abstract class Activity {
 
   public void addFather(Activity a) {
     this.father = a;
+  }
+
+  public void addTag(String tag) {
+    tags.add(tag);
+  }
+
+  public List<String> getTags() {
+    return tags;
+  }
+
+  public void removeTag(String tag) {
+    tags.remove(tag);
   }
 
   public Activity getFather() {
