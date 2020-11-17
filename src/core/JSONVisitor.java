@@ -15,50 +15,51 @@ de las instancias y después, en el caso el caso que esta tenga hijos, se visita
 */
 
 public class JSONVisitor implements Visitor {
-    public JSONObject visitTask ( Task t ) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( "uuuu-MM-dd HH:mm:ss" );
-        JSONObject a = new JSONObject ();
-        a.put ( "name", t.getName () );
-        a.put ( "class", "Task" );
-        a.put (
-                "initialDate", t.getInitialDate () == null ? "null" : t.getInitialDate ().format ( formatter ) );
-        a.put ( "finalDate", t.getFinalDate () == null ? "null" : t.getFinalDate ().format ( formatter ) );
-        a.put ( "duration", t.getDuration () );
-        JSONArray b = new JSONArray ();
-        for ( Interval inter : t.getIntervals () ) {
-            JSONObject ob = (JSONObject) inter.acceptVisitor ( new JSONVisitor () );
-            b.put ( ob );
-        }
-        a.put ( "activities", b );
-        return a;
-    }
 
-    public JSONObject visitProject ( Project p ) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( "uuuu-MM-dd HH:mm:ss" );
-        JSONObject a = new JSONObject ();
-        a.put ( "name", p.getName () );
-        a.put ( "class", "Project" );
-        a.put (
-                "initialDate", p.getInitialDate () == null ? "null" : p.getInitialDate ().format ( formatter ) );
-        a.put ( "finalDate", p.getFinalDate () == null ? "null" : p.getFinalDate ().format ( formatter ) );
-        a.put ( "duration", p.getDuration () );
-        JSONArray b = new JSONArray ();
-        for ( Activity act : p.getChilds () ) {
-            JSONObject ob = (JSONObject) act.acceptVisitor ( new JSONVisitor () );
-            b.put ( ob );
-        }
-        a.put ( "activities", b );
-        return a;
+  public JSONObject visitTask(Task t) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+    JSONObject a = new JSONObject();
+    a.put("name", t.getName());
+    a.put("class", "Task");
+    a.put(
+        "initialDate", t.getInitialDate() == null ? "null" : t.getInitialDate().format(formatter));
+    a.put("finalDate", t.getFinalDate() == null ? "null" : t.getFinalDate().format(formatter));
+    a.put("duration", t.getDuration());
+    JSONArray b = new JSONArray();
+    for (Interval inter : t.getIntervals()) {
+      JSONObject ob = (JSONObject) inter.acceptVisitor(new JSONVisitor());
+      b.put(ob);
     }
+    a.put("activities", b);
+    return a;
+  }
 
-    public JSONObject visitInterval ( Interval i ) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern ( "uuuu-MM-dd HH:mm:ss" );
-        JSONObject a = new JSONObject ();
-        a.put ( "class", "Interval" );
-        a.put (
-                "initialDate", i.getInitialDate () == null ? "null" : i.getInitialDate ().format ( formatter ) );
-        a.put ( "finalDate", i.getFinalDate () == null ? "null" : i.getFinalDate ().format ( formatter ) );
-        a.put ( "duration", i.getDuration ().toSeconds () );
-        return a;
+  public JSONObject visitProject(Project p) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+    JSONObject a = new JSONObject();
+    a.put("name", p.getName());
+    a.put("class", "Project");
+    a.put(
+        "initialDate", p.getInitialDate() == null ? "null" : p.getInitialDate().format(formatter));
+    a.put("finalDate", p.getFinalDate() == null ? "null" : p.getFinalDate().format(formatter));
+    a.put("duration", p.getDuration());
+    JSONArray b = new JSONArray();
+    for (Activity act : p.getChilds()) {
+      JSONObject ob = (JSONObject) act.acceptVisitor(new JSONVisitor());
+      b.put(ob);
     }
+    a.put("activities", b);
+    return a;
+  }
+
+  public JSONObject visitInterval(Interval i) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+    JSONObject a = new JSONObject();
+    a.put("class", "Interval");
+    a.put(
+        "initialDate", i.getInitialDate() == null ? "null" : i.getInitialDate().format(formatter));
+    a.put("finalDate", i.getFinalDate() == null ? "null" : i.getFinalDate().format(formatter));
+    a.put("duration", i.getDuration().toSeconds());
+    return a;
+  }
 }

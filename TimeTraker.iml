@@ -16,5 +16,6 @@
     <orderEntry type="library" name="org.slf4j:slf4j-ext:1.7.30" level="project" />
     <orderEntry type="library" name="ch.qos.logback:logback-core:1.2.3" level="project" />
     <orderEntry type="library" name="ch.qos.logback:logback-classic:1.2.3" level="project" />
+    <orderEntry type="library" name="com.google.googlejavaformat:google-java-format:1.3" level="project" />
   </component>
 </module>

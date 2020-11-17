@@ -21,28 +21,29 @@ dedicado a dicha tarea.
 */
 public class Task extends Activity {
 
-    private List <Interval> intervals;
+    private List<Interval> intervals;
     private boolean status;
 
-    public Task ( String name ) {
+    public Task(String name) {
         super(name);
-        intervals = new ArrayList <>();
+        intervals = new ArrayList<>();
     }
 
-    public Task ( String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration ) {
+    public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate,
+        Duration duration) {
         super(name, initialDate, finalDate, duration);
-        intervals = new ArrayList <>();
+        intervals = new ArrayList<>();
     }
 
-    public boolean getStatus () {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus ( boolean status ) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public void startTask () {
+    public void startTask() {
     /*
     Al activar la Task, se marca como activa y se crea un nuevo Interval que se añade a su lista de intervalos, i este nuevo Interval
     se añade como Observer al clock. Si es la primera vez que se activa, se le asigna la hora actual como hora inicial.
@@ -57,7 +58,7 @@ public class Task extends Activity {
         this.status = true;
     }
 
-    public void stopTask () {
+    public void stopTask() {
     /*
     Al parar la Task borramos el intervalo de la lista de observers y cambiamos el estado a inactivo
     para que no se muestre por pantalla.
@@ -66,30 +67,30 @@ public class Task extends Activity {
         this.status = false;
     }
 
-    public List <Interval> getIntervals () {
+    public List<Interval> getIntervals() {
         return this.intervals;
     }
 
     @Override
-    public String toString () {
+    public String toString() {
         return super.toString();
     }
 
-    public Interval getLastInterval () {
+    public Interval getLastInterval() {
         return intervals.get(intervals.size() - 1);
     }
 
     @Override
-    public Object acceptVisitor ( Visitor v ) {
+    public Object acceptVisitor(Visitor v) {
         return v.visitTask(this);
     }
 
-    public void addInterval ( Interval interval ) {
+    public void addInterval(Interval interval) {
         intervals.add(interval);
         interval.setFather(this);
     }
 
-    public Activity find ( String name ) {
+    public Activity find(String name) {
     /*
     Función que sirve para devolver una Actividad con el nombre pasado por parametro.
     En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.

@@ -17,54 +17,55 @@ Notifica a los observadores (interval y Client), en los instantes de tiempo que 
 */
 
 public class Clock extends Observable {
-    private final Timer TIMER;
-    private LocalDateTime date;
-    private static Clock clock;
-    private Logger logger = LoggerFactory.getLogger ( "core.Clock" );
 
-    private Clock () {
-        TIMER = new Timer ();
-        date = LocalDateTime.now ();
-    }
+  private final Timer TIMER;
+  private LocalDateTime date;
+  private static Clock clock;
+  private Logger logger = LoggerFactory.getLogger("core.Clock");
 
-    public LocalDateTime getDate () {
-        return date;
-    }
+  private Clock() {
+    TIMER = new Timer();
+    date = LocalDateTime.now();
+  }
 
-    public void start () {
+  public LocalDateTime getDate() {
+    return date;
+  }
+
+  public void start() {
     /*
     Función que crea un TimerTask que se ejecuta cada 2 segundos en un thread separado, este es el encargado de recuperar la fecha actual y
     avisar a los Observadores.
     */
-        TimerTask tt =
-                new TimerTask () {
-                    @Override
-                    public void run () {
-                        date = LocalDateTime.now ();
-                        setChanged ();
-                        notifyObservers ( date );
-                    }
-                };
-        TIMER.scheduleAtFixedRate ( tt, 0, 2 * 1000 );
-    }
+    TimerTask tt =
+        new TimerTask() {
+          @Override
+          public void run() {
+            date = LocalDateTime.now();
+            setChanged();
+            notifyObservers(date);
+          }
+        };
+    TIMER.scheduleAtFixedRate(tt, 0, 2 * 1000);
+  }
 
-    // metodo para parar el reloj y finalizar el test
-    public void cancel () {
+  // metodo para parar el reloj y finalizar el test
+  public void cancel() {
     /*
     Función que para la ejecucion del TimerTask.
     */
-        logger.warn ( "Clock canceled" );
-        TIMER.cancel ();
-    }
+    logger.warn("Clock canceled");
+    TIMER.cancel();
+  }
 
-    public static Clock getInstance () {
+  public static Clock getInstance() {
     /*
     Función necesaria para el patrón Singleton, esta devuelve la instancia del reloj en caso de que exista
     o la crea y devuelve (Lazy initialization).
     */
-        if ( clock == null ) {
-            clock = new Clock ();
-        }
-        return clock;
+    if (clock == null) {
+      clock = new Clock();
     }
+    return clock;
+  }
 }
