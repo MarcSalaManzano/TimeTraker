@@ -91,7 +91,7 @@ public abstract class Activity {
       if (this.getFather().getInitialDate() == null) {
         this.getFather().setInitialDate(initialDate);
         this.getFather().setFinalDate(initialDate);
-        assert (getFather().getInitialDate() == getFather().getFinalDate()): "initialDate and finalDate are not equal at initialDate initialization at setInitialDate from Activity";
+        assert (getFather().getInitialDate() != getFather().getFinalDate()): "initialDate and finalDate are not equal at initialDate initialization at setInitialDate from Activity";
       }
     }
   }
@@ -103,14 +103,18 @@ public abstract class Activity {
     this.finalDate = finalDate;
     if (father != null) {
       father.setFinalDate(finalDate);
-      assert (father.getFinalDate() != null): "father finalDate is null at setFinalDate from Activity";
+      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
     }
   }
 
-  public void addDuration(Duration duration) {
+  public void addDuration(Duration duration) throws IllegalArgumentException {
+    if (duration.isZero() || duration.isNegative()) {
+      throw new IllegalArgumentException("duration is smaller or equal to 0 in addDuration from Activity");
+    }
     this.duration = this.duration.plus(duration);
     if (father != null) {
       father.addDuration(duration);
+      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
     }
   }
 
@@ -135,6 +139,7 @@ public abstract class Activity {
         String.format(
             "Activity %-15s child of %-15s %-20s %-20s %d%n",
             name, fatherName, startTime, finalDate, duration);
+    assert (description == null || description == "" ): "description is null at toString from Activity";
     return description;
   }
 
