@@ -40,12 +40,12 @@ public abstract class Activity {
     if (name == null || name == "" ) {
       throw new IllegalArgumentException("Null or empty name in Activity constructor");
     }
-    if (duration.isZero() || duration.isNegative()) {
+    if (duration.isNegative()) {
       throw new IllegalArgumentException("duration smaller or equal than 0 in Activity constructor");
     }
-    if (finalDate.isBefore(initialDate) || finalDate.equals(initialDate)) {
-      throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
-    }
+    //if (finalDate.isBefore(initialDate) || finalDate.equals(initialDate)) {
+      //throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
+    //}
     this.name = name;
     this.initialDate = initialDate;
     this.finalDate = finalDate;
@@ -83,7 +83,7 @@ public abstract class Activity {
   /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
   y propaga los cambios al proyecto o tarea padre hasta root*/
   public void setInitialDate(LocalDateTime initialDate) throws IllegalArgumentException {
-    if (initialDate.isBefore(LocalDateTime.of(0, 0, 0, 0, 0))) {
+    if (initialDate.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
       throw new IllegalArgumentException("initialDate is negative at setFinalDate from Activity");
     }
     this.initialDate = initialDate;
@@ -97,7 +97,7 @@ public abstract class Activity {
   }
 
   public void setFinalDate(LocalDateTime finalDate) throws IllegalArgumentException {
-    if (finalDate.isBefore(LocalDateTime.of(0, 0, 0, 0, 0))) {
+    if (finalDate.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
       throw new IllegalArgumentException("finalDate is negative at setFinalDate from Activity");
     }
     this.finalDate = finalDate;
