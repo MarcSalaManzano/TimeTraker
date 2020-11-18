@@ -27,25 +27,15 @@ public abstract class Activity {
   private LocalDateTime finalDate = null;
   private List<String> tags = new ArrayList();
 
-  public Activity(String name) throws IllegalArgumentException {
-    if (name == null || name == "") {
-      throw new IllegalArgumentException("Null or empty name in Activity constructor");
-    }
+  public Activity(String name) {
+    invalidArguments(name);
     this.name = name;
     duration = Duration.ZERO;
   }
 
   public Activity(
-      String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) throws IllegalArgumentException{
-    if (name == null || name == "" ) {
-      throw new IllegalArgumentException("Null or empty name in Activity constructor");
-    }
-    if (duration.isNegative()) {
-      throw new IllegalArgumentException("duration smaller or equal than 0 in Activity constructor");
-    }
-    //if (finalDate.isBefore(initialDate) || finalDate.equals(initialDate)) {
-      //throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
-    //}
+      String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
+    invalidArguments(name, initialDate, finalDate, duration);
     this.name = name;
     this.initialDate = initialDate;
     this.finalDate = finalDate;
@@ -82,10 +72,8 @@ public abstract class Activity {
 
   /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
   y propaga los cambios al proyecto o tarea padre hasta root*/
-  public void setInitialDate(LocalDateTime initialDate) throws IllegalArgumentException {
-    if (initialDate.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
-      throw new IllegalArgumentException("initialDate is negative at setFinalDate from Activity");
-    }
+  public void setInitialDate(LocalDateTime initialDate) {
+    invalidArguments(initialDate);
     this.initialDate = initialDate;
     if (father != null) {
       if (this.getFather().getInitialDate() == null) {
@@ -97,9 +85,7 @@ public abstract class Activity {
   }
 
   public void setFinalDate(LocalDateTime finalDate) throws IllegalArgumentException {
-    if (finalDate.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
-      throw new IllegalArgumentException("finalDate is negative at setFinalDate from Activity");
-    }
+    invalidArguments(finalDate);
     this.finalDate = finalDate;
     if (father != null) {
       father.setFinalDate(finalDate);
@@ -108,9 +94,7 @@ public abstract class Activity {
   }
 
   public void addDuration(Duration duration) throws IllegalArgumentException {
-    if (duration.isZero() || duration.isNegative()) {
-      throw new IllegalArgumentException("duration is smaller or equal to 0 in addDuration from Activity");
-    }
+    invalidArguments(duration);
     this.duration = this.duration.plus(duration);
     if (father != null) {
       father.addDuration(duration);
@@ -146,4 +130,34 @@ public abstract class Activity {
   public abstract Object acceptVisitor(Visitor v);
 
   public abstract Activity find(String name);
+
+  public void invalidArguments(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) throws IllegalArgumentException {
+    if (name == null || name == "" ) {
+      throw new IllegalArgumentException("Null or empty name in Activity constructor");
+    }
+    if (duration.isNegative()) {
+      throw new IllegalArgumentException("duration smaller or equal than 0 in Activity constructor");
+    }
+    /*if (initialDate != null & finalDate != null & (finalDate.isBefore(initialDate) || finalDate.equals(initialDate))) {
+      throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
+    }*/
+  }
+
+  public void invalidArguments(String name) throws IllegalArgumentException {
+    if (name == null || name == "") {
+      throw new IllegalArgumentException("Null or empty name in Activity constructor");
+    }
+  }
+
+  public void invalidArguments(LocalDateTime date) throws IllegalArgumentException {
+    if (date.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
+      throw new IllegalArgumentException("initialDate is negative at setFinalDate from Activity");
+    }
+  }
+
+  public void invalidArguments(Duration duration) throws IllegalArgumentException {
+    if (duration.isZero() || duration.isNegative()) {
+      throw new IllegalArgumentException("duration is smaller or equal to 0 in addDuration from Activity");
+    }
+  }
 }

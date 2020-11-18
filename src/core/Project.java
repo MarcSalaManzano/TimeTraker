@@ -22,7 +22,7 @@ public class Project extends Activity {
 
   private List<Activity> childs;
 
-  public Project(String name) {
+  public Project(String name) throws IllegalArgumentException{
     super(name);
     childs = new ArrayList<>();
   }
