@@ -25,7 +25,7 @@ public class Project extends Activity {
   private List<Activity> childs;
   private Logger logger = LoggerFactory.getLogger("core.Project");
 
-  public Project(String name) throws IllegalArgumentException{
+  public Project(String name) {
     super(name);
     logger.debug("Project Constructor | Name: " + this.getName());
     childs = new ArrayList<>();
@@ -48,6 +48,7 @@ public class Project extends Activity {
   }
 
   public void addActivity(Activity a) throws IllegalArgumentException {
+    assert (invariant()):"Invariant violated";
     if (a == null) {
       throw new IllegalArgumentException("Null activity passed to addActivity function in project");
     }
@@ -57,6 +58,7 @@ public class Project extends Activity {
     if (!this.getName().equals("root")) {
       assert (a.getFather() == null) : "Father different from root is null";
     }
+    assert (invariant()):"Invariant violated";
   }
 
   public List<Activity> getChilds() {
@@ -69,6 +71,7 @@ public class Project extends Activity {
     En el caso de Project, primero mira si el nombre coincide con el suyo, en el caso que así sea se devuelve a si mismo.
     En el caso contrario llama a la función find de sus hijos y si uno de estos devuelve algo diferente a null lo devuelve.
      */
+    assert (invariant()):"Invariant violated";
     invalidArguments(name);
     if (name.equals(this.getName())) {
       return this;
@@ -80,7 +83,13 @@ public class Project extends Activity {
 
         }
       }
+      assert (invariant()):"Invariant violated";
       return null;
     }
+  }
+
+  protected boolean invariant() {
+    if (getInitialDate() != null && childs == null) {return false;}
+    return true;
   }
 }
