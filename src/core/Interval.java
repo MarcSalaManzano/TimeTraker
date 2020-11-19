@@ -1,30 +1,27 @@
 package core;
 
 import Visitor.Visitor;
-import org.json.JSONObject;
-
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Observer;
 import java.util.Observable;
-
+import java.util.Observer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /*
-La clase Interval actua como "Observador", en el patrón de diseño OBSERVER de la clase Clock. De esta
-forma se es capaz de actualizar la duración de los intervalos de forma síncrona y precisa.
+La clase Interval actua como "Observador", en el patrón de diseño OBSERVER de la clase Clock. De
+esta forma se es capaz de actualizar la duración de los intervalos de forma síncrona y precisa.
 Por otro aldo, esta clase debe actuar como elemento "ConcretElement" de VISITOR.
-Como clase, Interval contiene los datos necesarios para guardar un intervalo de tiempo. Duración del mismo,
-fecha inicial y final, y Tarea a la que pertenece este intervalo de tiempo.
+Como clase, Interval contiene los datos necesarios para guardar un intervalo de tiempo. Duración del
+mismo, fecha inicial y final, y Tarea a la que pertenece este intervalo de tiempo.
  */
 public class Interval implements Observer {
 
   private Duration duration;
   private Task father;
-  private final LocalDateTime INITIAL_DATE;
+  private final LocalDateTime initialDate;
   private LocalDateTime finalDate;
   private Logger logger = LoggerFactory.getLogger("core.Interval");
 
@@ -32,16 +29,16 @@ public class Interval implements Observer {
     duration = Duration.ZERO;
     this.father = father;
     // Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
-    INITIAL_DATE = Clock.getInstance().getDate();
+    initialDate = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
-    logger.debug("Interval Constructor | Initial Date: " + INITIAL_DATE.toString());
+    logger.debug("Interval Constructor | Initial Date: " + initialDate.toString());
   }
 
   public Interval(LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     this.duration = duration;
-    this.INITIAL_DATE = initialDate;
+    this.initialDate = initialDate;
     this.finalDate = finalDate;
-    logger.debug("Interval Constructor | Initial Date: " + INITIAL_DATE.toString());
+    logger.debug("Interval Constructor | Initial Date: " + this.initialDate.toString());
     logger.debug("Interval Constructor | Final Date: " + this.finalDate.toString());
     logger.debug("Interval Constructor | Duration: " + this.duration.toSeconds());
   }
@@ -72,7 +69,7 @@ public class Interval implements Observer {
   }
 
   public LocalDateTime getInitialDate() {
-    return INITIAL_DATE;
+    return initialDate;
   }
 
   public LocalDateTime getFinalDate() {
