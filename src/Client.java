@@ -1,6 +1,6 @@
 import core.*;
-import milestone2.TimeVisitor;
-import milestone2.VisitorTags;
+import secondmilestone.TimeVisitor;
+import secondmilestone.VisitorTags;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

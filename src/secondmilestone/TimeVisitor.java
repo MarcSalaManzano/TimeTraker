@@ -1,4 +1,4 @@
-package milestone2;
+package secondmilestone;
 
 import Visitor.Visitor;
 import core.Activity;

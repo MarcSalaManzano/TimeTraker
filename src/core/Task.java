@@ -70,11 +70,6 @@ public class Task extends Activity {
         return this.intervals;
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
     public Interval getLastInterval() {
         return intervals.get(intervals.size() - 1);
     }
