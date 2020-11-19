@@ -15,7 +15,7 @@ información de las tareas activas junto a sus padres.
 public class Client implements Observer {
 
   List<Task> active = new ArrayList<>();
-  JSONParse parser = new JSONParse();
+  JsonParse parser = new JsonParse();
   Logger logger = LoggerFactory.getLogger("Client");
 
   @Override
