@@ -1,6 +1,8 @@
 package core;
 
 import Visitor.Visitor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -22,15 +24,21 @@ public class Task extends Activity {
 
     private List<Interval> intervals;
     private boolean status;
+    private Logger logger = LoggerFactory.getLogger("core.Task");
 
     public Task(String name) {
         super(name);
+        logger.debug("Task Constructor | Name: " + name);
         intervals = new ArrayList<>();
     }
 
     public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate,
         Duration duration) {
         super(name, initialDate, finalDate, duration);
+        logger.debug("Task Constructor | Name: " + name);
+        logger.debug("Task Constructor | Initial Date: " + initialDate);
+        logger.debug("Task Constructor | Final Date: " + finalDate);
+        logger.debug("Task Constructor | Duration: " + duration);
         intervals = new ArrayList<>();
     }
 
@@ -52,6 +60,7 @@ public class Task extends Activity {
         }
         this.status = true;
         assert (getInitialDate() == null): "initialDate null when task has started";
+        logger.trace("Task has started");
     }
 
     public void stopTask() {
@@ -62,6 +71,7 @@ public class Task extends Activity {
         Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
         this.status = false;
         assert (getInitialDate() == getFinalDate() || getFinalDate().isBefore(getInitialDate())): "initialDate equal or smaller than finalDate when task has stopped";
+        logger.trace("Task has stopped");
     }
 
     public List<Interval> getIntervals() {
@@ -84,6 +94,7 @@ public class Task extends Activity {
         }
         intervals.add(interval);
         interval.setFather(this);
+        logger.trace("Interval added to task " + this.getName());
     }
 
     public Activity find(String name) {
