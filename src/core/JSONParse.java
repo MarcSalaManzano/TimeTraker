@@ -19,7 +19,7 @@ public class JSONParse {
   private Logger logger = LoggerFactory.getLogger("core.JSONParse");
 
   public void saveFile(Activity activity, String fileName) {
-    JSONObject object = (JSONObject) activity.acceptVisitor(new JSONVisitor());
+    JSONObject object = (JSONObject) activity.acceptVisitor(new JsonVisitor());
     try (FileWriter file = new FileWriter(fileName)) {
       file.write(object.toString());
     } catch (IOException e) {
