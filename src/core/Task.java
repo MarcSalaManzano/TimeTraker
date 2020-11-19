@@ -28,8 +28,10 @@ public class Task extends Activity {
 
     public Task(String name) {
         super(name);
+
         logger.debug("Task Constructor | Name: " + name);
         intervals = new ArrayList<>();
+        assert (invariant()):"Invariant violated";
     }
 
     public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate,
@@ -40,6 +42,7 @@ public class Task extends Activity {
         logger.debug("Task Constructor | Final Date: " + finalDate);
         logger.debug("Task Constructor | Duration: " + duration);
         intervals = new ArrayList<>();
+        assert (invariant()):"Invariant violated";
     }
 
     public boolean getStatus() {
