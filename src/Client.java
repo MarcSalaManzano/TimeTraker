@@ -238,18 +238,27 @@ public class Client implements Observer {
   }
 
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IllegalArgumentException {
     Client client = new Client();
-    if (args.length == 0) {
-      client.primerTest();
-    } else if(args.length == 1){
-      client.segundoTest();
-    } else if(args.length == 2){
-      client.tercertTest();
-    } else if(args.length == 3){
-      client.cuartoTest();
-    } else {
-      client.quintoTest();
+    int opt = Integer.parseInt(args[0]);
+    switch (opt) {
+      case 0:
+        client.primerTest();
+        break;
+      case 1:
+        client.segundoTest();
+        break;
+      case 2:
+        client.tercertTest();
+        break;
+      case 3:
+        client.cuartoTest();
+        break;
+      case 4:
+        client.quintoTest();
+        break;
+      default:
+        throw new IllegalArgumentException("Test to execute must be specified at program arguments");
     }
   }
 }
