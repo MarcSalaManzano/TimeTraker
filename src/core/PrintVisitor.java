@@ -1,8 +1,9 @@
 package core;
 
-import Visitor.Visitor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import visitor.Visitor;
 
 /*
 Implementación del patrón de diseño visitor, que utilizamos para recorrer el árbol de actividades

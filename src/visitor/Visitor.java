@@ -1,4 +1,4 @@
-package Visitor;
+package visitor;
 
 import core.Interval;
 import core.Project;

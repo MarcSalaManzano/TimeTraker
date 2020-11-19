@@ -1,6 +1,6 @@
 package core;
 
-import Visitor.Visitor;
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -9,6 +9,7 @@ import java.util.Observable;
 import java.util.Observer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import visitor.Visitor;
 
 /*
 La clase Interval actua como "Observador", en el patrón de diseño OBSERVER de la clase Clock. De

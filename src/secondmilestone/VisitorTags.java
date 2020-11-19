@@ -1,6 +1,6 @@
 package secondmilestone;
 
-import Visitor.Visitor;
+
 import core.Activity;
 import core.Interval;
 import core.Project;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import visitor.Visitor;
 
 /*
 Implementación del patrón de diseño visitor, que utilizamos para recorrer el árbol de actividades

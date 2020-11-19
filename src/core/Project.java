@@ -1,13 +1,12 @@
 package core;
 
-import Visitor.Visitor;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import visitor.Visitor;
 
 /*
 La clase Project actua como elemento "Composite", en el patrón de diseño COMPOSITE, puesto que es la
@@ -29,7 +28,7 @@ public class Project extends Activity {
     super(name);
     logger.debug("Project Constructor | Name: " + this.getName());
     childs = new ArrayList<>();
-    assert (invariant()):"Invariant violated";
+    assert (invariant()) : "Invariant violated";
   }
 
   public Project(
@@ -40,7 +39,7 @@ public class Project extends Activity {
     logger.debug("Project Constructor | Final Date: " + finalDate);
     logger.debug("Project Constructor | Duration: " + duration);
     childs = new ArrayList<>();
-    assert (invariant()):"Invariant violated";
+    assert (invariant()) : "Invariant violated";
   }
 
   @Override

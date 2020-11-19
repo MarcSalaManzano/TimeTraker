@@ -1,6 +1,5 @@
 package core;
 
-import Visitor.Visitor;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -8,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import visitor.Visitor;
 
 /*
 La clase Activity actua como elemento "Component", en el patrón de diseño COMPOSITE formado por las
