@@ -35,20 +35,19 @@ public class Project extends Activity {
 
   @Override
   public Object acceptVisitor(Visitor v) {
+    visitorCheck(v);
     return v.visitProject(this);
   }
 
-  public void addActivity(Activity a) {
-    //exceptions
+  public void addActivity(Activity a) throws IllegalArgumentException {
+    if (a == null) {
+      throw new IllegalArgumentException("Null activity passed to addActivity function in project");
+    }
     childs.add(a);
     a.addFather(this);
     if (this.getName() != "root") {
       assert (a.getFather() == null) : "Father different from root is null";
     }
-  }
-
-  public void removeActivity(Activity a) {
-    childs.remove(a);
   }
 
   public List<Activity> getChilds() {
@@ -61,7 +60,7 @@ public class Project extends Activity {
     En el caso de Project, primero mira si el nombre coincide con el suyo, en el caso que así sea se devuelve a si mismo.
     En el caso contrario llama a la función find de sus hijos y si uno de estos devuelve algo diferente a null lo devuelve.
      */
-    super.invalidArguments(name);
+    invalidArguments(name);
     if (name.equals(this.getName())) {
       return this;
     } else {
@@ -69,9 +68,10 @@ public class Project extends Activity {
         Activity activity = act.find(name);
         if (activity != null) {
           return activity;
+
         }
       }
+      return null;
     }
-    return null;
   }
 }

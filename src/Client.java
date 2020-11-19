@@ -229,7 +229,7 @@ public class Client implements Observer {
 
   }
 
-  public void cuartoTest2ElectricBogaloo() {
+  public void quintoTest() {
       Project root = parser.loadFile("cuartoTest.json");
       long duration = (int) root.acceptVisitor(new TimeVisitor(LocalDateTime.of(2020, 11, 17, 20, 7, 50),
               LocalDateTime.of(2020, 11, 17, 20, 8, 50)));
@@ -249,7 +249,7 @@ public class Client implements Observer {
     } else if(args.length == 3){
       client.cuartoTest();
     } else {
-      client.cuartoTest2ElectricBogaloo();
+      client.quintoTest();
     }
   }
 }
