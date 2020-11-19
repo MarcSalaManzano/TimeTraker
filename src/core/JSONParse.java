@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import org.json.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
 Hace de Cliente del patrón Visitor.Visitor.
@@ -14,6 +16,7 @@ reconstruye el arbol a partir de los datos leídos, creando las instancias de ca
 */
 
 public class JSONParse {
+  private Logger logger = LoggerFactory.getLogger("core.JSONParse");
 
   public void saveFile(Activity activity, String fileName) {
     JSONObject object = (JSONObject) activity.acceptVisitor(new JSONVisitor());
