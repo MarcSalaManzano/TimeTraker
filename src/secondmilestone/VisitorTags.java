@@ -20,7 +20,7 @@ ConcreteElements
 public class VisitorTags implements Visitor {
   private String tag;
   private List<Activity> tags = new ArrayList();
-  private Logger logger = LoggerFactory.getLogger("milestone2.VisitorTags");
+  private Logger logger = LoggerFactory.getLogger("secondmilestone.VisitorTags");
 
   public VisitorTags(String tag) {
     this.tag = tag;
