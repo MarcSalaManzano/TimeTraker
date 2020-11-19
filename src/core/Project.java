@@ -2,6 +2,8 @@ package core;
 
 import Visitor.Visitor;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -21,15 +23,21 @@ de sus Tareas, Pryectos, etc.
 public class Project extends Activity {
 
   private List<Activity> childs;
+  private Logger logger = LoggerFactory.getLogger("core.Project");
 
   public Project(String name) throws IllegalArgumentException{
     super(name);
+    logger.debug("Project Constructor | Name: " + this.getName());
     childs = new ArrayList<>();
   }
 
   public Project(
       String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     super(name, initialDate, finalDate, duration);
+    logger.debug("Project Constructor | Name: " + name);
+    logger.debug("Project Constructor | Initial Date: " + initialDate);
+    logger.debug("Project Constructor | Final Date: " + finalDate);
+    logger.debug("Project Constructor | Duration: " + duration);
     childs = new ArrayList<>();
   }
 
@@ -45,7 +53,8 @@ public class Project extends Activity {
     }
     childs.add(a);
     a.addFather(this);
-    if (this.getName() != "root") {
+    logger.debug("Father " + a.getName() + " added to " + this.getName() + " project");
+    if (!this.getName().equals("root")) {
       assert (a.getFather() == null) : "Father different from root is null";
     }
   }

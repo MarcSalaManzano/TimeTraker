@@ -11,7 +11,12 @@ import org.slf4j.LoggerFactory;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-
+/*
+Implementación del patrón de diseño visitor, que utilizamos para recorrer el árbol de actividades
+para calcular el tiempo total que se ha invertido en proyectos o tareas dado un intervalo de tiempo.
+Las clase Activity hace la función de Element, mientras que Project, Task y Interval serían
+ConcreteElements
+ */
 public class TimeVisitor  implements Visitor {
 
     LocalDateTime initialDate;
