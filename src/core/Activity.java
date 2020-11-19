@@ -1,9 +1,11 @@
 package core;
 
-import Visitor.Visitor;
 import java.util.ArrayList;
 import java.util.List;
 
+import Visitor.Visitor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
@@ -26,6 +28,7 @@ public abstract class Activity {
   private LocalDateTime initialDate = null;
   private LocalDateTime finalDate = null;
   private List<String> tags = new ArrayList();
+  private Logger logger = LoggerFactory.getLogger("core.Activity");
 
   public Activity(String name) {
     invalidArguments(name);
@@ -70,35 +73,47 @@ public abstract class Activity {
     return finalDate;
   }
 
-  /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
+  /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto,
+  la tarea o el intervalo que llama a la función
   y propaga los cambios al proyecto o tarea padre hasta root*/
+
   public void setInitialDate(LocalDateTime initialDate) {
     invalidArguments(initialDate);
+    logger.debug("Activity Initial Date updated | Old Date: " + this.initialDate);
     this.initialDate = initialDate;
+    logger.debug("Activity Initial Date updated | New Date: " + this.initialDate);
     if (father != null) {
       if (this.getFather().getInitialDate() == null) {
         this.getFather().setInitialDate(initialDate);
         this.getFather().setFinalDate(initialDate);
-        assert (getFather().getInitialDate() != getFather().getFinalDate()): "initialDate and finalDate are not equal at initialDate initialization at setInitialDate from Activity";
+        assert (getFather().getInitialDate() != getFather().getFinalDate())
+            : "initialDate and finalDate are not equal at initialDate "
+                + "initialization at setInitialDate from Activity";
       }
     }
   }
 
   public void setFinalDate(LocalDateTime finalDate) throws IllegalArgumentException {
     invalidArguments(finalDate);
+    logger.debug("Activity Final Date updated | Old Date: " + this.finalDate);
     this.finalDate = finalDate;
+    logger.debug("Activity Final Date updated | New Date: " + this.finalDate);
     if (father != null) {
       father.setFinalDate(finalDate);
-      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
+      assert (father.getFinalDate() == null)
+          : "father finalDate is null at setFinalDate from Activity";
     }
   }
 
   public void addDuration(Duration duration) throws IllegalArgumentException {
     invalidArguments(duration);
+    logger.debug("Activity Duration updated | Old Duration: " + this.duration);
     this.duration = this.duration.plus(duration);
+    logger.debug("Activity Duration updated | New Duration: " + this.duration);
     if (father != null) {
       father.addDuration(duration);
-      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
+      assert (father.getFinalDate() == null)
+          : "father finalDate is null at setFinalDate from Activity";
     }
   }
 
@@ -123,7 +138,8 @@ public abstract class Activity {
         String.format(
             "Activity %-15s child of %-15s %-20s %-20s %d%n",
             name, fatherName, startTime, finalDate, duration);
-    assert (description == null || description == "" ): "description is null at toString from Activity";
+    assert (description == null || description == "")
+        : "description is null at toString from Activity";
     return description;
   }
 
@@ -131,15 +147,21 @@ public abstract class Activity {
 
   public abstract Activity find(String name);
 
-  public void invalidArguments(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) throws IllegalArgumentException {
-    if (name == null || name == "" ) {
+  public void invalidArguments(
+      String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
+      throws IllegalArgumentException {
+    if (name == null || name == "") {
       throw new IllegalArgumentException("Null or empty name in Activity constructor");
     }
     if (duration.isNegative()) {
-      throw new IllegalArgumentException("duration smaller or equal than 0 in Activity constructor");
+      throw new IllegalArgumentException(
+          "duration smaller or equal than 0 in Activity constructor");
     }
-    if (initialDate != null && finalDate != null && (finalDate.isBefore(initialDate) || finalDate.equals(initialDate))) {
-      throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
+    if (initialDate != null
+        && finalDate != null
+        && (finalDate.isBefore(initialDate) || finalDate.equals(initialDate))) {
+      throw new IllegalArgumentException(
+          "initialDate greater than finalDate in Activity constructor");
     }
   }
 
@@ -157,7 +179,8 @@ public abstract class Activity {
 
   public void invalidArguments(Duration duration) throws IllegalArgumentException {
     if (duration.isZero() || duration.isNegative()) {
-      throw new IllegalArgumentException("duration is smaller or equal to 0 in addDuration from Activity");
+      throw new IllegalArgumentException(
+          "duration is smaller or equal to 0 in addDuration from Activity");
     }
   }
 
