@@ -1,7 +1,6 @@
 package core;
 
 import Visitor.Visitor;
-import org.json.JSONObject;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

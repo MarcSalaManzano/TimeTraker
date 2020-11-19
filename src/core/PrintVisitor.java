@@ -14,20 +14,20 @@ public class PrintVisitor implements Visitor {
   @Override
   public Object visitTask(Task t) {
     t.getLastInterval().acceptVisitor(new PrintVisitor());
-    logger.trace(t.toString());
+    logger.info(t.toString());
     t.getFather().acceptVisitor(new PrintVisitor());
     return null;
   }
 
   @Override
   public String visitProject(Project p) {
-    logger.trace(p.toString());
+    logger.info(p.toString());
     return null;
   }
 
   @Override
   public Object visitInterval(Interval i) {
-    logger.trace(i.toString());
+    logger.info(i.toString());
     return null;
   }
 }
