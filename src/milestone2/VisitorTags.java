@@ -21,6 +21,7 @@ public class VisitorTags implements Visitor {
 
   @Override
   public Object visitTask(Task t) {
+    logger.trace("Task visited "+t.getName()+" with visitor VisitorTags");
     List<String> projectTags = t.getTags();
     boolean hasTag = false;
     for(String tag : projectTags) {
@@ -37,6 +38,7 @@ public class VisitorTags implements Visitor {
 
   @Override
   public Object visitProject(Project p) {
+    logger.trace("Project visited "+p.getName()+" with visitor VisitorTags");
     List<String> projectTags = p.getTags();
     boolean hasTag = false;
     for(String tag : projectTags) {
@@ -56,6 +58,7 @@ public class VisitorTags implements Visitor {
 
   @Override
   public Object visitInterval(Interval i) {
+    logger.warn("Interval visited with visitor VisitorTags");
     return null;
   }
 }
