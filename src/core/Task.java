@@ -39,10 +39,6 @@ public class Task extends Activity {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public void startTask() {
     /*
     Al activar la Task, se marca como activa y se crea un nuevo Interval que se añade a su lista de intervalos, i este nuevo Interval
@@ -56,6 +52,7 @@ public class Task extends Activity {
             this.setInitialDate(newInitialDate);
         }
         this.status = true;
+        assert (getInitialDate() == null): "initialDate null when task has started";
     }
 
     public void stopTask() {
@@ -65,15 +62,11 @@ public class Task extends Activity {
      */
         Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
         this.status = false;
+        assert (getInitialDate() == getFinalDate() || getFinalDate().isBefore(getInitialDate())): "initialDate equal or smaller than finalDate when task has stopped";
     }
 
     public List<Interval> getIntervals() {
         return this.intervals;
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
     }
 
     public Interval getLastInterval() {
@@ -82,10 +75,14 @@ public class Task extends Activity {
 
     @Override
     public Object acceptVisitor(Visitor v) {
+        visitorCheck(v);
         return v.visitTask(this);
     }
 
-    public void addInterval(Interval interval) {
+    public void addInterval(Interval interval) throws IllegalArgumentException{
+        if (interval == null) {
+            throw new IllegalArgumentException();
+        }
         intervals.add(interval);
         interval.setFather(this);
     }
@@ -95,6 +92,7 @@ public class Task extends Activity {
     Función que sirve para devolver una Actividad con el nombre pasado por parametro.
     En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.
      */
+        invalidArguments(name);
         if (name.equals(this.getName())) {
             return this;
         } else {

@@ -138,14 +138,14 @@ public abstract class Activity {
     if (duration.isNegative()) {
       throw new IllegalArgumentException("duration smaller or equal than 0 in Activity constructor");
     }
-    /*if (initialDate != null & finalDate != null & (finalDate.isBefore(initialDate) || finalDate.equals(initialDate))) {
+    if (initialDate != null && finalDate != null && (finalDate.isBefore(initialDate) || finalDate.equals(initialDate))) {
       throw new IllegalArgumentException("initialDate greater than finalDate in Activity constructor");
-    }*/
+    }
   }
 
   public void invalidArguments(String name) throws IllegalArgumentException {
     if (name == null || name == "") {
-      throw new IllegalArgumentException("Null or empty name in Activity constructor");
+      throw new IllegalArgumentException("Null or empty name of an activity");
     }
   }
 
@@ -158,6 +158,12 @@ public abstract class Activity {
   public void invalidArguments(Duration duration) throws IllegalArgumentException {
     if (duration.isZero() || duration.isNegative()) {
       throw new IllegalArgumentException("duration is smaller or equal to 0 in addDuration from Activity");
+    }
+  }
+
+  public void visitorCheck(Visitor vis) throws IllegalArgumentException {
+    if (vis == null) {
+      throw new IllegalArgumentException("null visitor");
     }
   }
 }
