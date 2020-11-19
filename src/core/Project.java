@@ -29,6 +29,7 @@ public class Project extends Activity {
     super(name);
     logger.debug("Project Constructor | Name: " + this.getName());
     childs = new ArrayList<>();
+    assert (invariant()):"Invariant violated";
   }
 
   public Project(
@@ -39,6 +40,7 @@ public class Project extends Activity {
     logger.debug("Project Constructor | Final Date: " + finalDate);
     logger.debug("Project Constructor | Duration: " + duration);
     childs = new ArrayList<>();
+    assert (invariant()):"Invariant violated";
   }
 
   @Override
