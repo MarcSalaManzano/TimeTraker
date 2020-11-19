@@ -21,7 +21,7 @@ public class TimeVisitor  implements Visitor {
 
     LocalDateTime initialDate;
     LocalDateTime endDate;
-    private Logger logger = LoggerFactory.getLogger("milestone2.TimeVisitor");
+    private Logger logger = LoggerFactory.getLogger("secondmilestone.TimeVisitor");
 
 
     public TimeVisitor(LocalDateTime initialDate, LocalDateTime endDate) {
