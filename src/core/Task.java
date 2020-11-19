@@ -51,6 +51,7 @@ public class Task extends Activity {
     Al activar la Task, se marca como activa y se crea un nuevo Interval que se añade a su lista de intervalos, i este nuevo Interval
     se añade como Observer al clock. Si es la primera vez que se activa, se le asigna la hora actual como hora inicial.
      */
+        assert (invariant()):"Invariant violated";
         LocalDateTime newInitialDate = Clock.getInstance().getDate();
         Interval newInterval = new Interval(this);
         intervals.add(newInterval);
@@ -60,6 +61,7 @@ public class Task extends Activity {
         }
         this.status = true;
         assert (getInitialDate() == null): "initialDate null when task has started";
+        assert (invariant()):"Invariant violated";
         logger.trace("Task has started");
     }
 
@@ -68,9 +70,11 @@ public class Task extends Activity {
     Al parar la Task borramos el intervalo de la lista de observers y cambiamos el estado a inactivo
     para que no se muestre por pantalla.
      */
+        assert (invariant()):"Invariant violated";
         Clock.getInstance().deleteObserver(intervals.get(intervals.size() - 1));
         this.status = false;
         assert (getInitialDate() == getFinalDate() || getFinalDate().isBefore(getInitialDate())): "initialDate equal or smaller than finalDate when task has stopped";
+        assert (invariant()):"Invariant violated";
         logger.trace("Task has stopped");
     }
 
@@ -89,11 +93,13 @@ public class Task extends Activity {
     }
 
     public void addInterval(Interval interval) throws IllegalArgumentException{
+        assert (invariant()):"Invariant violated";
         if (interval == null) {
             throw new IllegalArgumentException();
         }
         intervals.add(interval);
         interval.setFather(this);
+        assert (invariant()):"Invariant violated";
         logger.trace("Interval added to task " + this.getName());
     }
 
@@ -102,11 +108,19 @@ public class Task extends Activity {
     Función que sirve para devolver una Actividad con el nombre pasado por parametro.
     En el caso de Task, si el nombre coincide con el suyo se devuelve a si mismo, en caso contrario devuelve un null.
      */
+        assert (invariant()):"Invariant violated";
         invalidArguments(name);
         if (name.equals(this.getName())) {
             return this;
         } else {
             return null;
         }
+    }
+
+    protected boolean invariant() {
+        if (getDuration() != 0) {
+            if (intervals == null) {return false;}
+        }
+        return true;
     }
 }

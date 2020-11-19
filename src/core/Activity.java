@@ -31,6 +31,7 @@ public abstract class Activity {
     invalidArguments(name);
     this.name = name;
     duration = Duration.ZERO;
+    assert (invariant()):"Invariant violated";
   }
 
   public Activity(
@@ -40,22 +41,30 @@ public abstract class Activity {
     this.initialDate = initialDate;
     this.finalDate = finalDate;
     this.duration = duration;
+    assert (invariant()):"Invariant violated";
   }
 
   public void addFather(Activity a) {
+    assert (invariant()):"Invariant violated";
     this.father = a;
+    assert (invariant()):"Invariant violated";
   }
 
   public void addTag(String tag) {
+    assert (invariant()):"Invariant violated";
     tags.add(tag);
+    assert (invariant()):"Invariant violated";
   }
 
   public List<String> getTags() {
+    assert (invariant()):"Invariant violated";
     return tags;
   }
 
   public void removeTag(String tag) {
+    assert (invariant()):"Invariant violated";
     tags.remove(tag);
+    assert (invariant()):"Invariant violated";
   }
 
   public Activity getFather() {
@@ -73,33 +82,39 @@ public abstract class Activity {
   /*setInitialDate, setFinalDate y addDuration actualizan dichos atributos del proyecto, la tarea o el intervalo que llama a la función
   y propaga los cambios al proyecto o tarea padre hasta root*/
   public void setInitialDate(LocalDateTime initialDate) {
+    assert (invariant()):"Invariant violated";
     invalidArguments(initialDate);
     this.initialDate = initialDate;
     if (father != null) {
       if (this.getFather().getInitialDate() == null) {
         this.getFather().setInitialDate(initialDate);
         this.getFather().setFinalDate(initialDate);
-        assert (getFather().getInitialDate() != getFather().getFinalDate()): "initialDate and finalDate are not equal at initialDate initialization at setInitialDate from Activity";
+        assert (getFather().getInitialDate() != getFather().getFinalDate()): "initialDate and finalDate are not equal at setInitialDate from Activity";
       }
     }
+    assert (invariant()):"Invariant violated";
   }
 
-  public void setFinalDate(LocalDateTime finalDate) throws IllegalArgumentException {
+  public void setFinalDate(LocalDateTime finalDate) {
+    assert (invariant()):"Invariant violated";
     invalidArguments(finalDate);
     this.finalDate = finalDate;
     if (father != null) {
       father.setFinalDate(finalDate);
-      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
+      assert (father.getFinalDate() != null): "father finalDate is null at setFinalDate from Activity";
     }
+    assert (invariant()):"Invariant violated";
   }
 
-  public void addDuration(Duration duration) throws IllegalArgumentException {
+  public void addDuration(Duration duration) {
+    assert (invariant()):"Invariant violated";
     invalidArguments(duration);
     this.duration = this.duration.plus(duration);
     if (father != null) {
       father.addDuration(duration);
-      assert (father.getFinalDate() == null): "father finalDate is null at setFinalDate from Activity";
+      assert (father.getFinalDate() != null): "father finalDate is null at setFinalDate from Activity";
     }
+    assert (invariant()):"Invariant violated";
   }
 
   public long getDuration() {
@@ -112,6 +127,7 @@ public abstract class Activity {
 
   @Override
   public String toString() {
+    assert (invariant()):"Invariant violated";
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     String name = this.getName();
     String fatherName = this.getFather() == null ? "null" : this.getFather().getName();
@@ -124,6 +140,7 @@ public abstract class Activity {
             "Activity %-15s child of %-15s %-20s %-20s %d%n",
             name, fatherName, startTime, finalDate, duration);
     assert (description == null || description == "" ): "description is null at toString from Activity";
+    assert (invariant()):"Invariant violated";
     return description;
   }
 
@@ -165,5 +182,14 @@ public abstract class Activity {
     if (vis == null) {
       throw new IllegalArgumentException("null visitor");
     }
+  }
+
+  protected boolean invariant() {
+    if (!duration.isZero()) {
+      if (finalDate.isBefore(initialDate)) {return false;}
+      if (finalDate == null || initialDate == null) {return false;}
+    }
+    if (name == null || name == "") {return false;}
+    return true;
   }
 }
