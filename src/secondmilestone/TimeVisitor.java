@@ -29,12 +29,12 @@ public class TimeVisitor implements Visitor {
   }
 
   @Override
-  public Object visitTask(Task t) {
+  public Object visitTask(Task task) {
     int duration = 0;
-    if (initialDate.isBefore(t.getFinalDate()) && endDate.isAfter(t.getInitialDate())) {
-      logger.trace("Task " + t.getName() + " visited with visitor TimeVisitor");
-      for (Interval i : t.getIntervals()) {
-        duration += (int) i.acceptVisitor(this);
+    if (initialDate.isBefore(task.getFinalDate()) && endDate.isAfter(task.getInitialDate())) {
+      logger.trace("Task " + task.getName() + " visited with visitor TimeVisitor");
+      for (Interval interval : task.getIntervals()) {
+        duration += (int) interval.acceptVisitor(this);
       }
       logger.debug("Total time for this task is: " + duration);
     }
@@ -42,32 +42,42 @@ public class TimeVisitor implements Visitor {
   }
 
   @Override
-  public Object visitProject(Project p) {
-    logger.trace("Project " + p.getName() + " visited with visitor VisitorTags");
+  public Object visitProject(Project project) {
+    logger.trace("Project " + project.getName() + " visited with visitor VisitorTags");
     int duration = 0;
-    for (Activity a : p.getChilds()) {
-      duration += (int) a.acceptVisitor(this);
+    for (Activity activity : project.getChilds()) {
+      duration += (int) activity.acceptVisitor(this);
     }
     logger.debug("Total time for this project is: " + duration);
     return duration;
   }
 
+  /*
+  Existen 5 casos distintos al calcular el tiempo de un intervalo: el intervalo esta fuera de las
+  fechas especificadas, el intervalo empieza fuera de las fechas pero termina dentro, el intervalo
+  empieza entre las fechas pero termina fuera, el intervalo empieza fuera de las fechas pero
+  transcurre dentro de ellas y el intervalo solo existe entre las fechas.
+   */
   @Override
-  public Object visitInterval(Interval i) {
-    if (initialDate.isBefore(i.getFinalDate()) && endDate.isAfter(i.getInitialDate())) {
+  public Object visitInterval(Interval interval) {
+    if (initialDate.isBefore(interval.getFinalDate())
+        && endDate.isAfter(interval.getInitialDate())) {
       logger.trace("Interval visited with visitor TimeVisitor");
-      if (initialDate.isBefore(i.getInitialDate()) && endDate.isAfter(i.getFinalDate())) {
+      if (initialDate.isBefore(interval.getInitialDate())
+          && endDate.isAfter(interval.getFinalDate())) {
         logger.debug("Interval starts and stops inside TimeVisitor's duration");
-        return (int) i.getDuration().getSeconds();
-      } else if (initialDate.isBefore(i.getInitialDate()) && endDate.isBefore(i.getFinalDate())) {
+        return (int) interval.getDuration().getSeconds();
+      } else if (initialDate.isBefore(interval.getInitialDate())
+          && endDate.isBefore(interval.getFinalDate())) {
         logger.debug(
             "Interval starts before TimeVisitor's initial date "
                 + "and stops inside TimeVisitor's duration");
-        return (int) Duration.between(i.getInitialDate(), endDate).getSeconds();
-      } else if (initialDate.isAfter(i.getInitialDate()) && endDate.isAfter(i.getFinalDate())) {
+        return (int) Duration.between(interval.getInitialDate(), endDate).getSeconds();
+      } else if (initialDate.isAfter(interval.getInitialDate())
+          && endDate.isAfter(interval.getFinalDate())) {
         logger.debug(
             "Interval ends after TimeVisitor's end date and starts inside TimeVisitor's duration");
-        return (int) Duration.between(initialDate, i.getFinalDate()).getSeconds();
+        return (int) Duration.between(initialDate, interval.getFinalDate()).getSeconds();
       } else {
         logger.debug("Interval starts and stops outside the TimeVisitor's duration");
         return (int) Duration.between(initialDate, endDate).getSeconds();

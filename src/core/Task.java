@@ -127,6 +127,6 @@ public class Task extends Activity {
         return false;
       }
     }
-    return true;
+    return super.invariant();
   }
 }

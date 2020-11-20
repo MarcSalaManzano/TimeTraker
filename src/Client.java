@@ -157,6 +157,7 @@ public class Client implements Observer {
     root.acceptVisitor(new VisitorTags("c++"));
     root.acceptVisitor(new VisitorTags("Java"));
     root.acceptVisitor(new VisitorTags("C++"));
+    root.acceptVisitor(new VisitorTags("SQL"));
     root.acceptVisitor(new VisitorTags("no"));
   }
 
@@ -237,8 +238,8 @@ public class Client implements Observer {
         (int)
             root.acceptVisitor(
                 new TimeVisitor(
-                    LocalDateTime.of(2020, 11, 17, 20, 7, 50),
-                    LocalDateTime.of(2020, 11, 17, 20, 8, 50)));
+                    LocalDateTime.of(2020, 11, 20, 00, 21, 57),
+                    LocalDateTime.of(2020, 11, 20, 00, 22, 57)));
     System.out.println(duration);
   }
 

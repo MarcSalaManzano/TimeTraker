@@ -15,7 +15,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /*
-Hace de Cliente del patrón Visitor.Visitor.
+Hace de Cliente del patrón visitor.
 Esta clase recorre y almacena el árbol de actividades en un fichero en formato Json, también lee el
 fichero y reconstruye el arbol a partir de los datos leídos, creando las instancias de cada clase.
 */

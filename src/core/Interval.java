@@ -29,7 +29,6 @@ public class Interval implements Observer {
   public Interval(Task father) {
     duration = Duration.ZERO;
     this.father = father;
-    // Coge la hora de Clock e inicializa initalDate y finalDate para calcular Duration
     initialDate = Clock.getInstance().getDate();
     finalDate = Clock.getInstance().getDate();
     logger.debug("Interval Constructor | Initial Date: " + initialDate.toString());

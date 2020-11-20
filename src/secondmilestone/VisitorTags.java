@@ -20,7 +20,7 @@ ConcreteElements
  */
 public class VisitorTags implements Visitor {
   private String tag;
-  private List<Activity> tags = new ArrayList();
+  private List<Activity> activitiesWithTag = new ArrayList();
   private Logger logger = LoggerFactory.getLogger("secondmilestone.VisitorTags");
 
   public VisitorTags(String tag) {
@@ -28,9 +28,9 @@ public class VisitorTags implements Visitor {
   }
 
   @Override
-  public Object visitTask(Task t) {
-    logger.trace("Task visited " + t.getName() + " with visitor VisitorTags");
-    List<String> taskTags = t.getTags();
+  public Object visitTask(Task task) {
+    logger.trace("Task visited " + task.getName() + " with visitor VisitorTags");
+    List<String> taskTags = task.getTags();
     boolean hasTag = false;
     for (String tag : taskTags) {
       if (tag.equals(this.tag)) {
@@ -38,16 +38,16 @@ public class VisitorTags implements Visitor {
       }
     }
     if (hasTag) {
-      logger.info("Task " + t.getName() + " has tag " + this.tag);
-      tags.add(t);
+      logger.info("Task " + task.getName() + " has tag " + this.tag);
+      activitiesWithTag.add(task);
     }
-    return this.tags;
+    return this.activitiesWithTag;
   }
 
   @Override
-  public Object visitProject(Project p) {
-    logger.trace("Project visited " + p.getName() + " with visitor VisitorTags");
-    List<String> projectTags = p.getTags();
+  public Object visitProject(Project project) {
+    logger.trace("Project visited " + project.getName() + " with visitor VisitorTags");
+    List<String> projectTags = project.getTags();
     boolean hasTag = false;
     for (String tag : projectTags) {
       if (tag.equals(this.tag)) {
@@ -55,17 +55,17 @@ public class VisitorTags implements Visitor {
       }
     }
     if (hasTag) {
-      logger.info("Project " + p.getName() + " has tag " + this.tag);
-      tags.add(p);
+      logger.info("Project " + project.getName() + " has tag " + this.tag);
+      activitiesWithTag.add(project);
     }
-    for (Activity child : p.getChilds()) {
+    for (Activity child : project.getChilds()) {
       child.acceptVisitor(this);
     }
-    return this.tags;
+    return this.activitiesWithTag;
   }
 
   @Override
-  public Object visitInterval(Interval i) {
+  public Object visitInterval(Interval interval) {
     logger.warn("Interval visited with visitor VisitorTags");
     return null;
   }

@@ -50,15 +50,11 @@ public class Project extends Activity {
 
   public void addActivity(Activity a) throws IllegalArgumentException {
     assert (invariant()) : "Invariant violated";
-    if (a == null) {
-      throw new IllegalArgumentException("Null activity passed to addActivity function in project");
-    }
+    invalidArguments(a);
     childs.add(a);
     a.addFather(this);
     logger.debug("Father " + a.getName() + " added to " + this.getName() + " project");
-    if (!this.getName().equals("root")) {
-      assert (a.getFather() == null) : "Father different from root is null";
-    }
+    assert a.getFather().equals(this);
     assert (invariant()) : "Invariant violated";
   }
 
@@ -94,6 +90,6 @@ public class Project extends Activity {
     if (getInitialDate() != null && childs == null) {
       return false;
     }
-    return true;
+    return super.invariant();
   }
 }

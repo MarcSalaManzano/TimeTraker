@@ -46,15 +46,19 @@ public abstract class Activity {
     assert (invariant()) : "Invariant violated";
   }
 
-  public void addFather(Activity a) {
+  public void addFather(Activity fatherActivity) {
     assert (invariant()) : "Invariant violated";
-    this.father = a;
+    invalidArguments(fatherActivity);
+    this.father = fatherActivity;
     assert (invariant()) : "Invariant violated";
   }
 
   public void addTag(String tag) {
     assert (invariant()) : "Invariant violated";
+    invalidArguments(tag);
+    int size = tags.size();
     tags.add(tag);
+    assert (tags.size() == size + 1);
     assert (invariant()) : "Invariant violated";
   }
 
@@ -162,7 +166,7 @@ public abstract class Activity {
 
   public abstract Activity find(String name);
 
-  public void invalidArguments(
+  protected void invalidArguments(
       String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
       throws IllegalArgumentException {
     if (name == null || name == "") {
@@ -180,26 +184,32 @@ public abstract class Activity {
     }
   }
 
-  public void invalidArguments(String name) throws IllegalArgumentException {
+  protected void invalidArguments(String name) throws IllegalArgumentException {
     if (name == null || name == "") {
       throw new IllegalArgumentException("Null or empty name of an activity");
     }
   }
 
-  public void invalidArguments(LocalDateTime date) throws IllegalArgumentException {
+  protected void invalidArguments(Activity activity) throws IllegalArgumentException {
+    if (activity == null || activity.equals(this)) {
+      throw new IllegalArgumentException("Null or empty name of an activity");
+    }
+  }
+
+  protected void invalidArguments(LocalDateTime date) throws IllegalArgumentException {
     if (date.isBefore(LocalDateTime.of(1, 1, 1, 0, 0))) {
       throw new IllegalArgumentException("initialDate is negative at setFinalDate from Activity");
     }
   }
 
-  public void invalidArguments(Duration duration) throws IllegalArgumentException {
+  protected void invalidArguments(Duration duration) throws IllegalArgumentException {
     if (duration.isZero() || duration.isNegative()) {
       throw new IllegalArgumentException(
           "duration is smaller or equal to 0 in addDuration from Activity");
     }
   }
 
-  public void visitorCheck(Visitor vis) throws IllegalArgumentException {
+  protected void visitorCheck(Visitor vis) throws IllegalArgumentException {
     if (vis == null) {
       throw new IllegalArgumentException("null visitor");
     }
@@ -214,7 +224,7 @@ public abstract class Activity {
         return false;
       }
     }
-    if (name == null || name == "") {
+    if (name == null || name.equals("")) {
       return false;
     }
     return true;

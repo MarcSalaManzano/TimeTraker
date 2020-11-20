@@ -1,38 +1,9 @@
 @startuml
 
 
-abstract class Clock
-abstract class Observable
-abstract class Activity
-abstract class Interval
-abstract class Observer
-abstract class Task
-abstract class Project
-abstract class JSONParse
-abstract class Client
-abstract class visitor.visitor
-
-
-
-Activity <--> Client
-Activity --> Activity
-Activity <--o Project
-Activity <|-- Project
-Activity <|-- Task
-Task o--> Interval
-Interval ..> Observer
-Observer <.. Client
-Client <--> JSONParse
-Clock --> Observable
-JSONParse --> visitor.visitor
-Activity --> visitor.visitor
-Interval --> visitor.visitor
-
-
-
-class Clock {
-- {static} Timer timer
-- {static} LocalDateTime date
+class core.Clock {
+- Timer timer
+- LocalDateTime date
 - {static} Clock clock
 --
 - Clock()
@@ -42,28 +13,32 @@ class Clock {
 + getInstance()
 }
 
-class Activity{
-- {static} String[] tags
-- {static} String name;
-- {static} Duration duration;
-- {static} father;
-- {static} LocalDateTime initialDate
-- {static} LocalDateTime finalDate
+class core.Activity{
+- List<String> tags
+- String name;
+- Duration duration;
+- Activity father;
+- LocalDateTime initialDate
+- LocalDateTime finalDate
 --
 + Activity(String name)
 + Activity(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
 + addFather(Activity a)
 + getFather()
++ addTag(String tag)
++ getTags()
++ removeTag(String tag)
 + LocalDateTime getInitialDate()
 + LocalDateTime getFinalDate()
 + setInitialDate(LocalDateTime initialDate)
++ {abstract} acceptVisitor(Visitor v)
 }
 
-class Interval{
-- {static} Duration duration;
-- {static} Task father;
-- {static} LocalDateTime initialDate;
-- static} LocalDateTime finalDate;
+class core.Interval{
+- Duration duration;
+- Task father;
+- LocalDateTime initialDate;
+- LocalDateTime finalDate;
 --
 + Interval(Task father)
 + Interval(LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
@@ -72,11 +47,11 @@ class Interval{
 + LocalDateTime getFinalDate()
 + Duration getDuration()
 + String toString()
-+ JSONObject acceptVisitor(visitor.visitor v)
++ Object acceptVisitor(visitor.visitor v)
 + setFather(Task t)
 }
 
-class Task{
+class core.Task{
 - {static} List<Interval> intervals
 - {static} boolean status
 --
@@ -87,9 +62,11 @@ class Task{
 + startTask()
 + stopTask()
 + List<Interval> getIntervals()
++ Activity find(String name)
++ Object acceptVisitor(Visitor v)
 }
 
-class Project{
+class core.Project{
 - {static} List<Activity> childs
 --
 + Project(String name)
@@ -99,10 +76,11 @@ class Project{
 + removeActivity(Activity a)
 + List<Activity> getChilds()
 + Activity find(String name)
++ Object acceptVisitor(Visitor v)
 }
 
 
-class Client{
+class core.Client{
 --
 + update(Observable o, Object arg)
 + wait(int seconds)
@@ -111,7 +89,7 @@ class Client{
 }
 
 
-class JSONParse{
+class core.JSONParse{
 --
 + saveFile(Activity activity, String fileName)
 + loadFile(String fileName)
@@ -120,12 +98,62 @@ class JSONParse{
 + createInterval(JSONObject ob)
 }
 
-class visitor.visitor {
+class core.PrintVisitor {
 --
-+ JSONObject visitTask(Task t)
-+ JSONObject visitProject(Project p)
-+ JSONObject visitInterval(Interval i)
++ Object visitTask(Task task)
++ Object visitProject(Project project)
++ Object visitInterval(Interval interval)
+}
+
+class core.JsonVisitor {
+--
++ JSONObject visitTask(Task task)
++ JSONObject visitProject(Project project)
++ JSONObject visitInterval(Interval interval)
+}
+
+interface visitor.Visitor {
+--
++ Object visitTask(Task task)
++ Object visitProject(Project project)
++ Object visitInterval(Interval interval)
+}
+
+class secondmilestone.TimeVisitor {
+--
+- LocalDateTime initialDate
+- LocalDateTime finalDate
++ Object visitTask(Task task)
++ Object visitProject(Project project)
++ Object visitInterval(Interval interval)
+}
+
+class secondmilestone.VisitorTags {
+--
+- String tag
+- List<Activity> activitiesWithTag
++ Object visitTask(Task task)
++ Object visitProject(Project project)
++ Object visitInterval(Interval interval)
 }
 
 
+core.Activity <--> core.Client
+core.Activity --> core.Activity
+core.Activity <--o core.Project
+core.Activity <|-- core.Project
+core.Activity <|-- core.Task
+core.Task o--> core.Interval
+core.Interval ..> Observer
+Observer <.. core.Client
+core.Client <--> core.JSONParse
+core.Clock --> Observable
+core.JSONParse --> core.JsonVisitor
+core.Activity --> visitor.Visitor
+core.Interval --> visitor.Visitor
+core.JsonVisitor ..|> visitor.Visitor
+core.PrintVisitor ..|> visitor.Visitor
+secondmilestone.TimeVisitor ..|> visitor.Visitor
+secondmilestone.VisitorTags ..|> visitor.Visitor
+core.Client --> visitor.Visitor
 @enduml
