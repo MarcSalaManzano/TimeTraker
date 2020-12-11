@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import visitor.Visitor;
@@ -165,6 +166,7 @@ public abstract class Activity {
   public abstract Object acceptVisitor(Visitor v);
 
   public abstract Activity find(String name);
+  public abstract Activity findActivityById(int n);
 
   protected void invalidArguments(
       String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
@@ -214,6 +216,8 @@ public abstract class Activity {
       throw new IllegalArgumentException("null visitor");
     }
   }
+
+  public abstract JSONObject toJson(int it);
 
   protected boolean invariant() {
     if (!duration.isZero()) {

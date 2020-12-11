@@ -7296,3 +7296,5283 @@ TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
 <td class="Logger">secondmilestone.TimeVisitor</td>
 <td class="Message">Total time for this project is: 180</td>
 </tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:36:37 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">936</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Visitor&#39;s initial date is 2020-11-20T00:21:57 and end date is 2020-11-20T00:22:57</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">940</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project root visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">940</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P0 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">941</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T0 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">944</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 0</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">944</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T1 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">945</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">946</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">947</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 50</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">948</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T2 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">948</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">949</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">950</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">950</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">951</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 40</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">952</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 90</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">953</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P1 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">954</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">954</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P3 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">955</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">956</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T4 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">957</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">958</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops outside the TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">958</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 60</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">959</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T5 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">960</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">960</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">961</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">962</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">963</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">963</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">964</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 30</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">965</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 180</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:37:24 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="trace even">
+<td class="RelativeTime">245</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Start test</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">248</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation start</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">4276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation stop</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:43:25 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="trace even">
+<td class="RelativeTime">290</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">295</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">295</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">296</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">297</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">299</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">300</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">301</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">302</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">303</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag c++</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">304</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">305</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">305</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">306</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">307</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">307</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">308</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">308</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">309</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">310</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">311</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task first milestone has tag Java</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">311</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">312</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag Java</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">313</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">313</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">314</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">315</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">315</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">316</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">317</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">317</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">318</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">319</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">320</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">321</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag C++</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">322</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag SQL</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">323</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">324</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">324</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">324</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">324</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:43:39 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="info even">
+<td class="RelativeTime">282</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag c++</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">290</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task first milestone has tag Java</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">291</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag Java</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">292</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag C++</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">293</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag SQL</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:45:16 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 08:45:29 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">210</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Visitor&#39;s initial date is 2020-11-20T00:21:57 and end date is 2020-11-20T00:22:57</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">214</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project root visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">214</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P0 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">215</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T0 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">217</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 0</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">218</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T1 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">219</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">220</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">220</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 50</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">221</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T2 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">222</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">223</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">223</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">224</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">225</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 40</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">227</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 90</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">228</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P1 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">229</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">230</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P3 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">231</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">232</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T4 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">234</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">235</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops outside the TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">236</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 60</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">237</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T5 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">238</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">240</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">242</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">243</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">244</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">245</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 30</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">246</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 180</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 16:39:34 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="trace even">
+<td class="RelativeTime">703</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Start test</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">710</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation start</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">4770</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation stop</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">6774</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">First list start</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 16:39:52 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">211</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: root</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">214</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software design</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">214</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software testing</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">214</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: databases</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">215</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: transportation</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">218</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father transportation added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">218</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software design added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">219</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software testing added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">220</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father databases added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">220</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: project time tracker</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">221</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: problems</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">221</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father problems added to software design project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">222</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father project time tracker added to software design project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">222</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first list</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">223</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: second list</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">223</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first list added to problems project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">224</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father second list added to problems project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">224</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: read handout</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">225</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first milestone</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">225</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father read handout added to project time tracker project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">226</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first milestone added to project time tracker project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">233</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Clock</td>
+<td class="Message">New clock created</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">234</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Start test</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">235</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation start</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">236</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T16:39:52.537147800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">237</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">238</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | New Date: 2020-11-20T16:39:52.537147800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">239</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">240</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | New Date: 2020-11-20T16:39:52.537147800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">242</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-11-20T16:39:52.537147800</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">243</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task has started</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2243</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | Old duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">2244</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2244</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">2245</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2246</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">2247</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2248</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New final date: 2020-11-20T16:39:54.546157800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">2250</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2251</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-11-20T16:39:54.546157800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">2253</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-11-20T16:39:52.537147800</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">2254</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-11-20T16:39:54.546157800</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">2275</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Task visited transportation with visitor PrintVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">2275</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Inerval visited with visitor PrintVisitor</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">2281</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Interval                 child of transportation  2020-11-20 16:39:52  2020-11-20 16:39:54  2
+</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">2282</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity transportation  child of root            2020-11-20 16:39:52  2020-11-20 16:39:54  2
+</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">2285</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Project visited root with visitor PrintVisitor</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">2286</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity root            child of null            2020-11-20 16:39:52  2020-11-20 16:39:54  2
+</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 16:40:10 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="trace even">
+<td class="RelativeTime">180</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Start test</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">184</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation start</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">2212</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Interval                 child of transportation  2020-11-20 16:40:10  2020-11-20 16:40:12  2
+</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">2215</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity transportation  child of root            2020-11-20 16:40:10  2020-11-20 16:40:12  2
+</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">2220</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity root            child of null            2020-11-20 16:40:10  2020-11-20 16:40:12  2
+</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">4180</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Interval                 child of transportation  2020-11-20 16:40:10  2020-11-20 16:40:14  4
+</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">4185</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity transportation  child of root            2020-11-20 16:40:10  2020-11-20 16:40:14  4
+</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">4190</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">Transportation stop</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">4190</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">core.PrintVisitor</td>
+<td class="Message">Activity root            child of null            2020-11-20 16:40:10  2020-11-20 16:40:14  4
+</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">6194</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">Client</td>
+<td class="Message">First list start</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 16:40:38 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="trace even">
+<td class="RelativeTime">194</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createProjectFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: root</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Initial Date: 2020-11-20T00:21:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Final Date: 2020-11-20T00:23:37</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">241</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Duration: PT6M10S</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">242</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createProjectFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">242</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: P0</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">243</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Initial Date: 2020-11-20T00:21:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">244</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Final Date: 2020-11-20T00:23:27</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">244</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Duration: PT3M20S</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">245</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">246</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T0</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">246</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:21:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">247</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:23:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">247</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT40S</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">248</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">249</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">250</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">253</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 20</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">254</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">255</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">255</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:37</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">256</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:21:47</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">257</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">257</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T0</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">258</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">258</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:23:17</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">259</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">259</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">260</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T0</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">263</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T0 added to P0 project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">264</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">265</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T1</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">265</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">266</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">267</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT1M20S</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">267</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">268</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">268</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:21:47</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">269</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 20</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">269</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T1</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">270</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">270</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:22:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">271</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">271</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 60</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">272</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T1</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">272</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T1 added to P0 project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">273</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T2</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT1M20S</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">274</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:22:27</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 60</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T2</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:22:47</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 20</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T2</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T2 added to P0 project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father P0 added to root project</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">275</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createProjectFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: P1</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Initial Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Final Date: 2020-11-20T00:23:17</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Duration: PT10S</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T3</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:23:17</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT10S</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">276</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:17</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T3</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T3 added to P1 project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father P1 added to root project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createProjectFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: P3</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Initial Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Final Date: null</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Duration: PT0S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father P3 added to root project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T4</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:21:17</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">277</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:23:37</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT1M50S</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:17</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:21:27</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T4</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:47</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 80</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T4</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:23:17</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:23:37</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 20</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T4</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T4 added to root project</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">278</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createTaskFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: T5</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Initial Date: 2020-11-20T00:21:37</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Final Date: 2020-11-20T00:22:47</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Duration: PT50S</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:21:37</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:22:07</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 30</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T5</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:22:17</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:22:27</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T5</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONParse</td>
+<td class="Message">Entered in createIntervalFromJson</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-11-20T00:22:37</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Final Date: 2020-11-20T00:22:47</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">279</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Duration: 10</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">280</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Interval added to task T5</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">280</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father T5 added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">293</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Visitor&#39;s initial date is 2020-11-20T00:21:57 and end date is 2020-11-20T00:22:57</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">295</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project root visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">295</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P0 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">295</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T0 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">297</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 0</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">297</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T1 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">297</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 50</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T2 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">298</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">299</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">300</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts before TimeVisitor&#39;s initial date and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">301</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 40</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">301</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 90</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">302</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P1 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">302</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">302</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Project P3 visited with visitor VisitorTags</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">303</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 0</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">303</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T4 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">305</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">305</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops outside the TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">306</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 60</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">306</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Task T5 visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">306</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">307</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval ends after TimeVisitor&#39;s end date and starts inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">307</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">308</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">308</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval visited with visitor TimeVisitor</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">309</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Interval starts and stops inside TimeVisitor&#39;s duration</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">309</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this task is: 30</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">310</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">secondmilestone.TimeVisitor</td>
+<td class="Message">Total time for this project is: 180</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Fri Nov 20 16:40:48 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">160</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software design</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">163</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software testing</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">163</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: databases</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">164</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: transportation</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">165</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: root</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">167</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father transportation added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">168</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software design added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">169</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software testing added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">170</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father databases added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">170</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: project time tracker</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">171</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: problems</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">171</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father problems added to software design project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">172</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father project time tracker added to software design project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">173</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first list</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">173</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: second list</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">174</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first list added to problems project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">175</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father second list added to problems project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">175</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: read handout</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">176</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first milestone</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">176</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father read handout added to project time tracker project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">177</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first milestone added to project time tracker project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">190</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">191</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">192</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">193</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">194</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">195</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">196</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">197</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">197</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">198</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">199</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag c++</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">200</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">201</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">202</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">203</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">203</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">204</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">205</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">206</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">206</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">206</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">206</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task first milestone has tag Java</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="info even">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project software testing has tag Java</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">207</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag C++</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">208</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+
+<tr class="info odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">INFO</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project databases has tag SQL</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited root with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited transportation with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software design with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited problems with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited second list with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited project time tracker with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">209</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited read handout with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">210</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Task visited first milestone with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">210</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited software testing with visitor VisitorTags</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">210</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">secondmilestone.VisitorTags</td>
+<td class="Message">Project visited databases with visitor VisitorTags</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 10 21:48:27 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">1488</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: root</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1491</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software design</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1492</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software testing</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1492</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: databases</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1528</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: transportation</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1532</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father transportation added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1533</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software design added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1534</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software testing added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1535</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father databases added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1536</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: project time tracker</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1537</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: problems</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1537</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father problems added to software design project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1538</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father project time tracker added to software design project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1539</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first list</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1540</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: second list</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1540</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first list added to problems project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1541</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father second list added to problems project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1542</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: read handout</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1543</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first milestone</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">1544</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father read handout added to project time tracker project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">1545</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first milestone added to project time tracker project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">1650</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Clock</td>
+<td class="Message">New clock created</td>
+</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Logback Log Messages</title>
+<style  type="text/css">
+table { margin-left: 2em; margin-right: 2em; border-left: 2px solid #AAA; }
+TR.even { background: #FFFFFF; }
+TR.odd { background: #EAEAEA; }
+TR.warn TD.Level, TR.error TD.Level, TR.fatal TD.Level {font-weight: bold; color: #FF4040 }
+TD { padding-right: 1ex; padding-left: 1ex; border-right: 2px solid #AAA; }
+TD.Time, TD.Date { text-align: right; font-family: courier, monospace; font-size: smaller; }
+TD.Thread { text-align: left; }
+TD.Level { text-align: right; }
+TD.Logger { text-align: left; }
+TR.header { background: #596ED5; color: #FFF; font-weight: bold; font-size: larger; }
+TD.Exception { background: #A2AEE8; font-family: courier, monospace;}
+</style>
+
+  </head>
+<body>
+<hr/>
+<p>Log session start time Thu Dec 10 21:51:07 CET 2020</p><p></p>
+
+<table cellspacing="0">
+<tr class="header">
+<td class="RelativeTime">RelativeTime</td>
+<td class="Thread">Thread</td>
+<td class="MDC">MDC</td>
+<td class="Level">Level</td>
+<td class="Logger">Logger</td>
+<td class="Message">Message</td>
+</tr>
+
+
+<tr class="debug even">
+<td class="RelativeTime">380</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: root</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">384</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software design</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">385</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: software testing</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">385</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: databases</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">388</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: transportation</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">393</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father transportation added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">394</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software design added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">395</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father software testing added to root project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">396</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father databases added to root project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">398</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: project time tracker</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">399</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Project Constructor | Name: problems</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">400</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father problems added to software design project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">400</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father project time tracker added to software design project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">402</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first list</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">403</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: second list</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">404</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first list added to problems project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">405</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father second list added to problems project</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">406</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: read handout</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">407</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task Constructor | Name: first milestone</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">408</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father read handout added to project time tracker project</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">409</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Project</td>
+<td class="Message">Father first milestone added to project time tracker project</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">434</td>
+<td class="Thread">main</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Clock</td>
+<td class="Message">New clock created</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34141</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Constructor | Initial Date: 2020-12-10T21:51:39.921179800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34143</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34144</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | New Date: 2020-12-10T21:51:39.921179800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34145</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34147</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Initial Date updated | New Date: 2020-12-10T21:51:39.921179800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34148</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34149</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:39.921179800</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">34151</td>
+<td class="Thread">Thread-10</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task has started</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34444</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | Old duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34445</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34446</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34447</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34449</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT0S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34450</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34451</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New final date: 2020-12-10T21:51:41.920527800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34452</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: null</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34454</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:41.920527800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">34455</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:39.921179800</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">34456</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:41.920527800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | Old duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT2S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New final date: 2020-12-10T21:51:43.921178100</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:41.920527800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:43.921178100</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">36437</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:41.920527800</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">36437</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:43.921178100</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | Old duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT4S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New final date: 2020-12-10T21:51:45.920288700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">38435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:43.921178100</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:45.920288700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">38436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:43.921178100</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">38436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:45.920288700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | Old duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New duration: PT8S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT8S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | Old Duration: PT6S</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Duration updated | New Duration: PT8S</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Interval</td>
+<td class="Message">Interval Update | New final date: 2020-12-10T21:51:47.920583500</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">40435</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:45.920288700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:47.920583500</td>
+</tr>
+
+<tr class="debug even">
+<td class="RelativeTime">40436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | Old Date: 2020-12-10T21:51:45.920288700</td>
+</tr>
+
+<tr class="debug odd">
+<td class="RelativeTime">40436</td>
+<td class="Thread">Timer-0</td>
+<td class="MDC"></td>
+<td class="Level">DEBUG</td>
+<td class="Logger">core.Activity</td>
+<td class="Message">Activity Final Date updated | New Date: 2020-12-10T21:51:47.920583500</td>
+</tr>
+
+<tr class="trace even">
+<td class="RelativeTime">41591</td>
+<td class="Thread">Thread-12</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.Task</td>
+<td class="Message">Task has stopped</td>
+</tr>
+
+<tr class="trace odd">
+<td class="RelativeTime">46577</td>
+<td class="Thread">Thread-14</td>
+<td class="MDC"></td>
+<td class="Level">TRACE</td>
+<td class="Logger">core.JSONVisitor</td>
+<td class="Message">Project visited with visitor JSONVisitor</td>
+</tr>

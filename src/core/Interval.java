@@ -25,8 +25,11 @@ public class Interval implements Observer {
   private final LocalDateTime initialDate;
   private LocalDateTime finalDate;
   private Logger logger = LoggerFactory.getLogger("core.Interval");
+  private int id;
+
 
   public Interval(Task father) {
+    this.id = IdConstructor.getNextId();
     duration = Duration.ZERO;
     this.father = father;
     initialDate = Clock.getInstance().getDate();
@@ -38,6 +41,7 @@ public class Interval implements Observer {
     this.duration = duration;
     this.initialDate = initialDate;
     this.finalDate = finalDate;
+    this.id = IdConstructor.getNextId();
     logger.debug("Interval Constructor | Initial Date: " + this.initialDate.toString());
     logger.debug("Interval Constructor | Final Date: " + this.finalDate.toString());
     logger.debug("Interval Constructor | Duration: " + this.duration.toSeconds());

@@ -2,8 +2,11 @@ package core;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import visitor.Visitor;
@@ -23,9 +26,11 @@ public class Project extends Activity {
 
   private List<Activity> childs;
   private Logger logger = LoggerFactory.getLogger("core.Project");
+  private int id;
 
   public Project(String name) {
     super(name);
+    this.id = IdConstructor.getNextId();
     logger.debug("Project Constructor | Name: " + this.getName());
     childs = new ArrayList<>();
     assert (invariant()) : "Invariant violated";
@@ -34,6 +39,7 @@ public class Project extends Activity {
   public Project(
       String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     super(name, initialDate, finalDate, duration);
+    this.id = IdConstructor.getNextId();
     logger.debug("Project Constructor | Name: " + name);
     logger.debug("Project Constructor | Initial Date: " + initialDate);
     logger.debug("Project Constructor | Final Date: " + finalDate);
@@ -84,6 +90,49 @@ public class Project extends Activity {
       assert (invariant()) : "Invariant violated";
       return null;
     }
+  }
+
+  @Override
+  public Activity findActivityById(int n) {
+    if (id == n) {
+      return this;
+    } else {
+      for (Activity act : childs) {
+        Activity activity = act.findActivityById(n);
+        if (activity != null) {
+          return activity;
+        }
+      }
+      return null;
+    }
+  }
+
+  @Override
+  public JSONObject toJson(int it) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+    JSONObject jsonProject = new JSONObject();
+    jsonProject.put("name", this.getName());
+    jsonProject.put("class", "Project");
+    jsonProject.put("id", this.id);
+    // Necesario comprobar que la fecha sea null, porque sino al formatear la fecha nos daria
+    // una excepcion
+    jsonProject.put(
+        "initialDate",
+        this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter));
+    jsonProject.put(
+        "finalDate",
+        this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter));
+    jsonProject.put("duration", this.getDuration());
+    // Guardamos los hijos en una array JSON
+    if (it > 0) {
+      JSONArray jsonActivities = new JSONArray();
+      for (Activity activityChild : this.getChilds()) {
+        JSONObject jsonActivity = (JSONObject) activityChild.toJson(it-1);
+        jsonActivities.put(jsonActivity);
+      }
+      jsonProject.put("activities", jsonActivities);
+    }
+    return jsonProject;
   }
 
   protected boolean invariant() {

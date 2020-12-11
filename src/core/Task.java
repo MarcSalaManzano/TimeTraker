@@ -2,8 +2,11 @@ package core;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import visitor.Visitor;
@@ -24,10 +27,11 @@ public class Task extends Activity {
   private List<Interval> intervals;
   private boolean status;
   private Logger logger = LoggerFactory.getLogger("core.Task");
+  private int id;
 
   public Task(String name) {
     super(name);
-
+    this.id = IdConstructor.getNextId();
     logger.debug("Task Constructor | Name: " + name);
     intervals = new ArrayList<>();
     assert (invariant()) : "Invariant violated";
@@ -35,6 +39,7 @@ public class Task extends Activity {
 
   public Task(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration) {
     super(name, initialDate, finalDate, duration);
+    this.id = IdConstructor.getNextId();
     logger.debug("Task Constructor | Name: " + name);
     logger.debug("Task Constructor | Initial Date: " + initialDate);
     logger.debug("Task Constructor | Final Date: " + finalDate);
@@ -119,6 +124,41 @@ public class Task extends Activity {
     } else {
       return null;
     }
+  }
+
+  @Override
+  public Activity findActivityById(int n) {
+    if (n == id) {
+      return this;
+    } else {
+      return null;
+    }
+  }
+
+  @Override
+  public JSONObject toJson(int it) {
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
+    JSONObject jsonTask = new JSONObject();
+    jsonTask.put("name", this.getName());
+    jsonTask.put("class", "Task");
+    jsonTask.put("id", this.id);
+    // Necesario comprobar que la fecha sea null, porque sino al formatear la fecha nos daria
+    // una excepcion
+    jsonTask.put(
+        "initialDate",
+        this.getInitialDate() == null ? "null" : this.getInitialDate().format(formatter));
+    jsonTask.put(
+        "finalDate", this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter));
+    jsonTask.put("duration", this.getDuration());
+    JSONArray jsonIntervals = new JSONArray();
+    if(it > 0) {
+      for (Interval intervalChild : this.getIntervals()) {
+        JSONObject jsonInterval = (JSONObject) intervalChild.acceptVisitor(new JsonVisitor());
+        jsonIntervals.put(jsonInterval);
+      }
+      jsonTask.put("activities", jsonIntervals);
+    }
+    return jsonTask;
   }
 
   protected boolean invariant() {

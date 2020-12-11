@@ -31,7 +31,9 @@ class core.Activity{
 + LocalDateTime getInitialDate()
 + LocalDateTime getFinalDate()
 + setInitialDate(LocalDateTime initialDate)
++ setFinalDate(LocalDateTime finalDate)
 + {abstract} acceptVisitor(Visitor v)
++ addDuration(Duration duration)
 }
 
 class core.Interval{
@@ -52,8 +54,8 @@ class core.Interval{
 }
 
 class core.Task{
-- {static} List<Interval> intervals
-- {static} boolean status
+- List<Interval> intervals
+- boolean status
 --
 + Task(String name)
 + Task(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
@@ -62,16 +64,16 @@ class core.Task{
 + startTask()
 + stopTask()
 + List<Interval> getIntervals()
++ addInterval(Interval interval)
 + Activity find(String name)
 + Object acceptVisitor(Visitor v)
 }
 
 class core.Project{
-- {static} List<Activity> childs
+- List<Activity> childs
 --
 + Project(String name)
 + Project(String name, LocalDateTime initialDate, LocalDateTime finalDate, Duration duration)
-+ JSONObject acceptVisitor(visitor.visitor v)
 + addActivity(Activity a)
 + removeActivity(Activity a)
 + List<Activity> getChilds()
@@ -93,9 +95,9 @@ class core.JSONParse{
 --
 + saveFile(Activity activity, String fileName)
 + loadFile(String fileName)
-+ createTask(JSONObject ob)
-+ createProject(JSONObject ob)
-+ createInterval(JSONObject ob)
++ createTaskFromJson(JSONObject jsonTask)
++ createProjectFromJson(JSONObject jsonProject)
++ createIntervalFromJson(JSONObject jsonInterval)
 }
 
 class core.PrintVisitor {
@@ -137,7 +139,7 @@ class secondmilestone.VisitorTags {
 + Object visitInterval(Interval interval)
 }
 
-
+core.Clock -> Observable
 core.Activity <--> core.Client
 core.Activity --> core.Activity
 core.Activity <--o core.Project
@@ -147,13 +149,12 @@ core.Task o--> core.Interval
 core.Interval ..> Observer
 Observer <.. core.Client
 core.Client <--> core.JSONParse
-core.Clock --> Observable
 core.JSONParse --> core.JsonVisitor
 core.Activity --> visitor.Visitor
 core.Interval --> visitor.Visitor
-core.JsonVisitor ..|> visitor.Visitor
-core.PrintVisitor ..|> visitor.Visitor
-secondmilestone.TimeVisitor ..|> visitor.Visitor
-secondmilestone.VisitorTags ..|> visitor.Visitor
 core.Client --> visitor.Visitor
+core.JsonVisitor .|> visitor.Visitor
+core.PrintVisitor .|> visitor.Visitor
+visitor.Visitor <|.. secondmilestone.VisitorTags
+visitor.Visitor <|.. secondmilestone.TimeVisitor
 @enduml
