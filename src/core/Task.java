@@ -58,18 +58,20 @@ public class Task extends Activity {
     intervalos, i este nuevo Interval se añade como Observer al clock. Si es la primera vez que se
     activa, se le asigna la hora actual como hora inicial.
      */
-    assert (invariant()) : "Invariant violated";
-    LocalDateTime newInitialDate = Clock.getInstance().getDate();
-    Interval newInterval = new Interval(this);
-    intervals.add(newInterval);
-    Clock.getInstance().addObserver(newInterval);
-    if (getInitialDate() == null) {
-      this.setInitialDate(newInitialDate);
+    if (!status) {
+      assert (invariant()) : "Invariant violated";
+      LocalDateTime newInitialDate = Clock.getInstance().getDate();
+      Interval newInterval = new Interval(this);
+      intervals.add(newInterval);
+      Clock.getInstance().addObserver(newInterval);
+      if (getInitialDate() == null) {
+        this.setInitialDate(newInitialDate);
+      }
+      this.status = true;
+      assert (getInitialDate() == null) : "initialDate null when task has started";
+      assert (invariant()) : "Invariant violated";
+      logger.trace("Task has started");
     }
-    this.status = true;
-    assert (getInitialDate() == null) : "initialDate null when task has started";
-    assert (invariant()) : "Invariant violated";
-    logger.trace("Task has started");
   }
 
   public void stopTask() {
@@ -150,6 +152,7 @@ public class Task extends Activity {
     jsonTask.put(
         "finalDate", this.getFinalDate() == null ? "null" : this.getFinalDate().format(formatter));
     jsonTask.put("duration", this.getDuration());
+    jsonTask.put("active", this.status);
     JSONArray jsonIntervals = new JSONArray();
     if(it > 0) {
       for (Interval intervalChild : this.getIntervals()) {
