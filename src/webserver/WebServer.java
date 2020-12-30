@@ -149,6 +149,7 @@ public class WebServer {
             newTask.addTag(tagsArray[i]);
           }
           project.addActivity(newTask);
+          break;
         }
         case "createProject": {
           int id = Integer.parseInt(tokens[1]);
@@ -161,6 +162,7 @@ public class WebServer {
             newProject.addTag(tagsArray[i]);
           }
           project.addActivity(newProject);
+          break;
         }
         // DONE: add new task, project
         // TODO: edit task, project properties
