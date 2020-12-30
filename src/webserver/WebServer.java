@@ -144,9 +144,11 @@ public class WebServer {
           String tags = tokens[3];
           Project project = (Project) findActivityById(id);
           Task newTask = new Task(name);
-          String[] tagsArray = tags.split(",");
-          for(int i = 0; i < tagsArray.length; i++) {
-            newTask.addTag(tagsArray[i]);
+          if (tags != null) {
+            String[] tagsArray = tags.split(",");
+            for (int i = 0; i < tagsArray.length; i++) {
+              newTask.addTag(tagsArray[i]);
+            }
           }
           project.addActivity(newTask);
           break;
@@ -157,9 +159,11 @@ public class WebServer {
           String tags = tokens[3];
           Project project = (Project) findActivityById(id);
           Project newProject = new Project(name);
-          String[] tagsArray = tags.split(",");
-          for(int i = 0; i < tagsArray.length; i++) {
-            newProject.addTag(tagsArray[i]);
+          if (tags != null) {
+            String[] tagsArray = tags.split(",");
+            for (int i = 0; i < tagsArray.length; i++) {
+              newProject.addTag(tagsArray[i]);
+            }
           }
           project.addActivity(newProject);
           break;
