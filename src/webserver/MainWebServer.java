@@ -21,7 +21,7 @@ public class MainWebServer {
   }
 
   private static Activity makeTreeCourses(){
-    Project root = new Project("root");
+    Project root = new Project("Time Trackers");
     Project sd = new Project("software design");
     Project st = new Project("software testing");
     Project db = new Project("databases");
