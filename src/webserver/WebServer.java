@@ -1,6 +1,7 @@
 package webserver;
 
 import core.Activity;
+import core.Project;
 import core.Task;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -137,7 +138,31 @@ public class WebServer {
           body = "{}";
           break;
         }
-        // TODO: add new task, project
+        case "createTask": {
+          int id = Integer.parseInt(tokens[1]);
+          String name = tokens[2];
+          String tags = tokens[3];
+          Project project = (Project) findActivityById(id);
+          Task newTask = new Task(name);
+          String[] tagsArray = tags.split(",");
+          for(int i = 0; i < tagsArray.length; i++) {
+            newTask.addTag(tagsArray[i]);
+          }
+          project.addActivity(newTask);
+        }
+        case "createProject": {
+          int id = Integer.parseInt(tokens[1]);
+          String name = tokens[2];
+          String tags = tokens[3];
+          Project project = (Project) findActivityById(id);
+          Project newProject = new Project(name);
+          String[] tagsArray = tags.split(",");
+          for(int i = 0; i < tagsArray.length; i++) {
+            newProject.addTag(tagsArray[i]);
+          }
+          project.addActivity(newProject);
+        }
+        // DONE: add new task, project
         // TODO: edit task, project properties
         default:
           assert false;
